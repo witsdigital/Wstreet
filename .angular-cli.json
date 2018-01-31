@@ -17,11 +17,32 @@
       "test": "test.ts",
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
+      "prefix": "street",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "../assets/style.css",
+        "../assets/font.css",
+        "../assets/bootstrap/css/bootstrap.min.css",
+        "../assets/fa/css/font-awesome.min.css",
+        "../assets/magnific-popup.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../assets/js/jquery.js",
+        "../assets/js/dropdown_menu.js",
+        "../assets/js/map_event.js",
+        "../assets/js/buton.js",
+        "../assets/js/button-filter.js",
+        "../assets/js/grid.js",
+        "../assets/js/isotope.pkgd.min.js",
+        "../assets/js/anchor_point.js",
+        "../assets/bootstrap/js/bootstrap.min.js",
+        "../assets/js/jquery.magnific-popup.min.js",
+        "../assets/js/custom-popup.js",
+        "../assets/js/mag-popup.js",
+        "../assets/js/progressive_bar.js",
+        "../assets/js/partners.js",
+        "../assets/js/pageloader.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

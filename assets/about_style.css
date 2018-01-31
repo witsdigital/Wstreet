@@ -1,0 +1,268 @@
+/* TOP BACKGROUND */
+
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Container-fluid - .single-bg
+	1.1 Top Row - .single-bg h2
+	1.2 Bottom Row - single-bg a
+-------------------------------------------------------------------*/
+
+.single-bg {
+	width: 100%;
+	height: 300px;
+	background: url('http://placehold.it/1280x853');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-webkit-background-size: cover;
+	margin-top: -60px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.single-bg h2 {
+	color: white;
+	font-family: Roboto;
+	font-weight: 700;
+	font-size: 50px;
+	margin-top: 130px;
+	padding: 0px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-bottom: 20px;
+}
+
+.single-bg a {
+	font-family: Raleway;
+	font-weight: 400;
+	color: white;
+	font-size: 18px;
+	letter-spacing: 1px;
+}
+
+.single-bg a:nth-of-type(2) {
+	background: rgba(57, 176, 113, 0.6);
+	padding: 8px 10px 8px 10px;
+}
+
+.single-bg a:hover, .single-bg a:focus, .single-bg a:active {
+	text-decoration: none;
+	color: white;
+}
+
+
+/* About Content */
+
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Container - .single_about_content
+	1.1 Top Row 
+		1.1.1 Left Column - .single_about_content img
+		1.1.2 Right Column - .single _about_content img
+	1.2 Middle Row - .about_description
+		1.2.1 Row - .about_description p
+	1.3 Bottom Row - .about_skills
+		1.3.1 First Column - .about-skills section
+			1.3.1.1  Left - .about-skills i
+			1.3.1.2 Right - .about-skills p
+		1.3.2 Second Column - .about-skills section
+			1.3.2.1  Left - .about-skills i
+			1.3.2.2 Right - .about-skills p
+		1.3.3 Third Column - .about-skills section
+			1.3.3.1  Left - .about-skills i
+			1.3.3.2 Right - .about-skills p
+-------------------------------------------------------------------*/
+
+.single_about_content {
+	width: 100%;
+	height: auto;
+}
+
+.single_about_content img {
+	width: 100%;
+	height: auto;
+}
+
+
+/* ABOUT LOREM */
+
+.about_description {
+	margin-top: 10px;
+}
+
+.about_description p {
+	font-family: Raleway;
+	font-weight: 400;
+	font-size: 16px;
+	color: #5E5E5E;
+	line-height: 25px;
+	letter-spacing: 1px;
+}
+
+
+/* ABOUT SKILLS */
+
+.about-skills {
+	margin-top: 30px;
+}
+
+.about-skills section {
+	width: 100%;
+	height: auto;
+	background: #FAFAFA;
+	padding: 30px;
+	margin-bottom: 30px;
+	transition: all .2s ease;
+	padding-right: 10px;
+}
+
+.about-skills section:hover {
+	background: #39B071;
+}
+
+.about-skills section:hover> i {
+	color: #39B071;
+	background: white;
+}
+
+.about-skills section:hover> h2, .about-skills section:hover> p {
+	color: white;
+}
+
+.about-skills i {
+	color: white;
+	background: #39B071;
+	padding: 20px;
+	transition: all .3s ease;
+	border-radius: 50%;
+	margin-top: 10px;
+}
+
+.about-skills h2 {
+	margin-top: -80px;
+	margin-bottom: 5px;
+	font-family: Raleway;
+	font-weight: 400;
+	color: #212121;
+	margin-left: 85px;
+	font-size: 20px;
+	text-transform: uppercase;
+	transition: all .3s ease;
+	letter-spacing: 1px;
+}
+
+.about-skills p {
+	margin-bottom: 0px;
+	font-family: Raleway;
+	font-weight: 400;
+	color: #535353;
+	font-size: 15px;
+	margin-left: 85px;
+	transition: all .3s ease;
+}
+
+
+/* ABOUT IMG HOVER */
+
+.caption-style-4 {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+.caption-style-4 li {
+	float: left;
+	padding: 0px;
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 30px;
+}
+
+.caption-style-4 li:hover .caption {
+	opacity: 1;
+}
+
+.caption-style-4 li:hover img {
+	opacity: 1;
+	transform: scale(1.15, 1.15);
+	-webkit-transform: scale(1.15, 1.15);
+	-moz-transform: scale(1.15, 1.15);
+	-ms-transform: scale(1.15, 1.15);
+	-o-transform: scale(1.15, 1.15);
+}
+
+.caption-style-4 img {
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	z-index: 4;
+}
+
+.caption-style-4 .caption {
+	cursor: pointer;
+	position: absolute;
+	opacity: 0;
+	-webkit-transition: all 0.45s ease-in-out;
+	-moz-transition: all 0.45s ease-in-out;
+	-o-transition: all 0.45s ease-in-out;
+	-ms-transition: all 0.45s ease-in-out;
+	transition: all 0.45s ease-in-out;
+	width: 100%;
+	height: 100%;
+}
+
+.caption-style-4 img {
+	-webkit-transition: all 0.25s ease-in-out;
+	-moz-transition: all 0.25s ease-in-out;
+	-o-transition: all 0.25s ease-in-out;
+	-ms-transition: all 0.25s ease-in-out;
+	transition: all 0.25s ease-in-out;
+}
+
+.caption-style-4 .blur {
+	background-color: rgba(0, 0, 0, 0.65);
+	height: 100%;
+	width: 100%;
+	z-index: 5;
+	position: absolute;
+}
+
+.caption-style-4 .caption-text {
+	z-index: 10;
+	color: #212121;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: rgba(255, 255, 255, 0.5);
+	padding: 20px;
+	border-radius: 50%;
+	font-size: 12px;
+	transition: all .3s ease;
+}
+
+.caption-text:hover {
+	color: white;
+}
+
+
+/*================================================== MOBILE QUERY ==================*/
+
+@media only screen and (max-width: 350px) {
+	.about-skills h2 {
+		margin-top: 0px;
+		margin-left: 0px;
+		margin-top: 10px !important;
+	}
+	.about-skills p {
+		margin-left: 0px;
+		margin-top: 5px !important;
+	}
+}
