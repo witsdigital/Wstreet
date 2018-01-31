@@ -52,7 +52,6 @@ html {
 	/* centers the loading animation horizontally on the screen */
 	top: 50%;
 	/* centers the loading animation vertically on the screen */
-	background-image: url(images/status.gif);
 	/* path to your loading animation */
 	background-repeat: no-repeat;
 	background-position: center;
@@ -371,30 +370,53 @@ a:hover {
 
 
 .hero1 {
-	
-	background: #8a8a8a;
+	width: 100%;
 	padding: 30px;
 	display: inline-block;
-	color: #fff;
+	color: rgb(215, 253, 222);
 	border-radius: 10px;
+
+}
+.hero1 a {
+	float:right;
+	background: #FAFAFA;
+	padding: 7px;
+	border-radius: 5px;
+	
+
 
 }
 
 .hero2 {
 	overflow: auto;
 	height: 400px;
-	background: #8a8a8a;
 	padding: 30px;
 	color: #fff;
 	border-radius: 10px;
 
 }
 
-.hero1 a {
-	float:right;
-	color: #fff;
+
+.hero2 .chat {
+	background: #F7F7F7;
+	color: #1B1B1B;
+	padding: 5px;
+	margin: 7px;
+	border-radius: 10px;
 
 }
+
+
+.hero3 {
+	width: 100%;
+	padding: 30px;
+	margin: 10px;
+	display: inline-block;
+	color: rgb(215, 253, 222);
+	border-radius: 10px;
+
+}
+
 
 .fade-carousel a {
 	height: 100vh;
@@ -506,6 +528,39 @@ a:hover {
 }
 
 
+.border-button1 {
+	background: rgba(94, 94, 94, 0.829) !important;
+	border: 2px solid rgb(0, 0, 0) !important;
+	border-radius: 10px;
+	transition: all .3s ease !important;
+	-webkit-transform: translate3d(0, 0, 0) !important;
+	transform: translate3d(0, 0, 0) !important;
+}
+
+.border-button1:hover {
+	background: rgba(11, 0, 105, 0.8) !important;
+	color: white;
+}
+
+
+.border-button2 {
+
+	background: rgba(0, 105, 18, 0.8) !important;
+	border: 2px solid rgb(0, 0, 0) !important;
+	transition: all .3s ease !important;
+	border-radius: 10px;
+	-webkit-transform: translate3d(0, 0, 0) !important;
+	transform: translate3d(0, 0, 0) !important;
+}
+
+.border-button2:hover {
+	background: rgba(11, 0, 105, 0.8) !important;
+	color: white;
+}
+
+
+
+
 /********************************/
 
 
@@ -530,15 +585,15 @@ a:hover {
 }
 
 .fade-carousel .slides .slide-1 {
-	background-image: url('images/main-slider-img2.jpg');
+	background-image: url('images/logo.jpg');
 }
 
 .fade-carousel .slides .slide-2 {
-	background-image: url('http://placehold.it/1280x853');
+	background-image: url('images/main-slider-img2.jpg');
 }
 
 .fade-carousel .slides .slide-3 {
-	background-image: url('http://placehold.it/1280x853');
+	background-image: url('images/main-slider-img2.jpg');
 }
 
 .carousel-inner> .item {

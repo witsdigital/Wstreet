@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "streetcoin"
+    "name": "street"
   },
   "apps": [
     {
@@ -20,28 +20,27 @@
       "prefix": "street",
       "styles": [
         "styles.css",
-        "../assets/style.css",
-        "../assets/font.css",
-        "../assets/bootstrap/css/bootstrap.min.css",
-        "../assets/fa/css/font-awesome.min.css",
-        "../assets/magnific-popup.css"
+        "../assets/css/akslider.css",
+        "../assets/css/donate.css",
+        "../assets/css/bootstrap.css",
+        "../assets/css/theme.css",
+        "../assets/style.css"
+     
       ],
       "scripts": [
         "../assets/js/jquery.js",
-        "../assets/js/dropdown_menu.js",
-        "../assets/js/map_event.js",
-        "../assets/js/buton.js",
-        "../assets/js/button-filter.js",
-        "../assets/js/grid.js",
+        "../assets/js/uikit.js",
+        "../assets/js/SimpleCounter.js",
+        "../assets/js/components/grid.js",
+        "../assets/js/components/slider.js",
+        "../assets/js/components/slideshow.js",
+        "../assets/js/components/slideset.js",
+        "../assets/js/components/sticky.js",
+        "../assets/js/components/lightbox.js",
         "../assets/js/isotope.pkgd.min.js",
-        "../assets/js/anchor_point.js",
-        "../assets/bootstrap/js/bootstrap.min.js",
-        "../assets/js/jquery.magnific-popup.min.js",
-        "../assets/js/custom-popup.js",
-        "../assets/js/mag-popup.js",
-        "../assets/js/progressive_bar.js",
-        "../assets/js/partners.js",
-        "../assets/js/pageloader.js"
+        "../assets/js/theme.js",
+        "../assets/mootools-yui-compressed.js",
+        "../assets/maps.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

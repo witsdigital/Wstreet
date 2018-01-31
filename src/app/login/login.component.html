@@ -12,7 +12,12 @@
      <div class="carousel carousel-inner">
         <div class="item slides active">
            <div class="slide-1"></div>
-           
+           <div class="hero">
+             <br><br><br><br><br><br><br><br><br><br><br>
+             
+           <button class="border-button1" onclick="window.location.href='#cadastrar'"> Cadastrar </button>
+          <button class="border-button2" onclick="window.location.href='#login'"> Login </button>
+        </div>
         </div>
         
         </div>
@@ -21,8 +26,8 @@
 <!-- END of Slideshow -->
 
 
-<!-- Contact Us -->
-<div class="container contact-us" id="contactSc">
+<!-- chat Us -->
+<div class="container contact-us">
   <div class="row contact-row">
       <div class = "col-xs-12 col-sm-12 col-md-12 title">
           <p>Chat</p>
@@ -31,26 +36,8 @@
      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 contact-info">
         <div class="c_info">
           <div class="hero2">
-            admin as 22:00:15: olá <br><br>
-            admin as 22:00:15: olá <br><br>
-            admin as 22:00:15: olá <br><br>
-            admin as 22:00:15: olá <br><br>
-            admin as 22:00:15: olá <br><br>
-            admin as 22:00:15: olá <br><br>
-            admin as 22:00:15: olá <br><br>
-            admin as 22:00:15: olá <br><br>
-            admin as 22:00:15: olá <br><br>
-            admin as 22:00:15: olá <br><br>
-            admin as 22:00:15: olá <br><br>
-            admin as 22:00:15: olá <br><br>
-            admin as 22:00:15: olá <br><br>
-            admin as 22:00:15: olá <br><br>
-            admin as 22:00:15: olá <br><br>
-            admin as 22:00:15: olá <br><br>
-            admin as 22:00:15: olá <br><br>
-            admin as 22:00:15: olá <br><br>
-            admin as 22:00:15: olá <br><br>
-            admin as 22:00:15: olá <br><br>
+            <div *ngFor="let mensagem of mensagens" class="chat">{{mensagem.login}} as {{mensagem.data_hora}}: {{mensagem.mensagem}}</div>
+            
 
           </div>
            <section class="c_p">
@@ -65,7 +52,7 @@
            <hr>
         </div>
      </div>
-     <div class="col-lg-4 col-md-4 col-sm-4">
+     <div class="col-lg-4 col-md-4 col-sm-4" id="login">
         <div class="hero1">
             <h3 class="title">Login</h3>
             <div style="width: 275px; float: right;" >
@@ -74,7 +61,7 @@
                  <input type="password" class="form-control"  name="senha" placeholder="Senha" required=""  style="margin-bottom:10px;">
                  <a href="#">Esqueceu a senha?</a>
                            <div class="form-group pull-right"  style="margin-top:10px;">
-                           <button type="button" class="btn btn-default" >Cadastrar</button>
+                           <button type="button" class="btn btn-default" onclick="window.location.href='#cadastrar'">Cadastrar</button>
                            <button type="submit" class="btn btn-primary btn-rounded" >Entrar</button>
                          </div>
                </form>
@@ -82,7 +69,7 @@
      </div>
   </div>
 </div>
-  <!-- =======  BLOG   -->
+  <!-- =======  noticias   -->
   <div class="container blog" id="blogSc">
       <div class="row">
          <div class = "col-xs-12 col-sm-12 col-md-12 title">
@@ -90,36 +77,15 @@
             <hr>
             <p>Fique por dentro de todas as atualizações do site.<br> 
           </div>
-         <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+         <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12" *ngFor="let noticia of noticias">
             <img src="assets/images/litecoins.jpg" alt="">
             <section class="blog_info_post" onclick="">
-               <h2>Learn HTML faster!</h2>
+               <h2>{{noticia.titulo}}</h2>
                <h3><i class="fa fa-calendar-check-o" aria-hidden="true"></i> 22 Jul 2017</h3>
         
-               <p>Nunc congue dolor et tortor pulvinar, a tristique arcu lobortis.<br> Quisque enim dolor mauris ac sagittis.</p>
+               <p style="max-width: 300ch; overflow: hidden; white-space: nowrap;">{{noticia.descricao}}</p>
+
                <button onclick="window.location.href='single_blog.html'"> ler mais </button>
-               <a href="blog_posts.html"></a>
-            </section>
-         </div>
-         <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-            <img src="assets/images/litecoins.jpg" alt="">
-            <section class="blog_info_post" onclick="">
-               <h2>Learn CSS faster!</h2>
-               <h3><i class="fa fa-calendar-check-o" aria-hidden="true"></i> 22 Jul 2017</h3>
-           
-               <p>Nunc congue dolor et tortor pulvinar, a tristique arcu lobortis.<br> Quisque enim dolor mauris ac sagittis.</p>
-               <button onclick="window.location.href='single_blog.html'"> ler mais  </button>
-               <a href="blog_posts.html"></a>
-            </section>
-         </div>
-         <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-            <img src="assets/images/litecoins.jpg" alt="">
-            <section class="blog_info_post" onclick="">
-               <h2>Learn JS faster!</h2>
-               <h3><i class="fa fa-calendar-check-o" aria-hidden="true"></i> 22 Jul 2017</h3>
-          
-               <p>Nunc congue dolor et tortor pulvinar, a tristique arcu lobortis.<br> Quisque enim dolor mauris ac sagittis.</p>
-               <button onclick="window.location.href='single_blog.html'"> ler mais  </button>
                <a href="blog_posts.html"></a>
             </section>
          </div>
@@ -130,7 +96,7 @@
 
 
 
-            <!-- ABOUT US -->
+            <!-- estatisticas US -->
             <div class="container-fluid about-background show_button" id=aboutSc>
                 <div class="container about-us">
                    <div class="row">
@@ -161,15 +127,22 @@
                         
 
                       </div>
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 about"><img src="assets/images/main-slider-img1.jpg" alt=""></div>
+                      <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12" id="cadastrar">
+                          <div class="hero3">
+                            <h3 class="title">Cadastro</h3><br>
+                           
+                          <input type="text" class="form-control"  name="user" placeholder="Usuario" required=""><br>
+                          <input type="text" class="form-control"  name="email" placeholder="Email" required=""><br>
+                          <input type="password" class="form-control"  name="senha" placeholder="Senha" required=""  style="margin-bottom:10px;">
+                                    <div class="form-group pull-right"  style="margin-top:10px;">
+                                    <button type="button" class="btn btn-primary" >Cadastrar</button>
+                                
+                                  </div>
+                                </div>
+                      </div>
                    </div>
                 </div>
              </div>
              <br>
              <br>
-             <br>
              <!-- END of About us -->
-
-
-
-           

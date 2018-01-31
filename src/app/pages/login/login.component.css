@@ -1,0 +1,22 @@
+.hero2 {
+	overflow: auto;
+	height: 250px;
+    padding: 30px;
+	color: #fff;
+	border-radius: 10px;
+
+}
+
+
+.hero2 .chat {
+	color: #1B1B1B;
+	padding: 5px 10px;
+    margin: 7px;
+    display: block;
+    background: #fff;
+	border-radius: 10px;
+
+}
+
+
+
