@@ -9,7 +9,7 @@ import 'rxjs/add/operator/do';
 @Injectable()
 export class User {
 
-    api:string = 'http://localhost/streetcoin/api/';
+  api:string = 'http://meupainel.com.br/streetcoin/api/';
 
     constructor(public http: Http) {
      }
