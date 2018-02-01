@@ -58,15 +58,15 @@
                               </div>
                               
                                 <div style="width: 275px; float: right;" >
-                                <form class="labels-uppercase clearfix">
-                                    <input type="text" class="form-control"  name="login" placeholder="Nome de usuario/Email" required=""><br>
-                                     <input type="password" class="form-control"  name="senha" placeholder="Senha" required=""  style="margin-bottom:10px;">
+                                
+                                    <input type="text" [(ngModel)]="login" class="form-control"  name="login" placeholder="Nome de usuario/Email" required=""><br>
+                                     <input type="password" [(ngModel)]="senha" class="form-control"  name="senha" placeholder="Senha" required=""  style="margin-bottom:10px;">
                                      <a href="#">Esqueceu a senha?</a>
                                                <div class="form-group pull-right"  style="margin-top:10px;">
                                                <button type="button" class="btn btn-default" onclick="window.location.href='#cadastrar'">Cadastrar</button>
-                                               <button type="submit" class="btn btn-primary btn-rounded" >Entrar</button>
+                                               <button type="button" class="btn btn-primary btn-rounded" (click)="logar()" >Entrar</button>
                                              </div>
-                                   </form>
+                                  
                             </div>
                               
                           

@@ -11,26 +11,9 @@
                         </a>
   
                         <ul class="uk-navbar-nav uk-hidden-small">
-                            <li class="uk-parent uk-active" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="index.html">Home</a>
-                                <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1">
-                                    <div class="uk-grid uk-dropdown-grid">
-                                        <div class="uk-width-1-1">
-                                            <ul class="uk-nav uk-nav-navbar">
-                                                <li><a href="../yellow/index.html">Yellow Color Scheme</a>
-                                                </li>
-                                                <li><a href="../blue/index.html">Blue Color Scheme</a>
-                                                </li>
-                                                <li><a href="../red/index.html">Red Color Scheme</a>
-                                                </li>
-                                                <li><a href="offline.html">Offline Page</a>
-                                                </li>
-                                                <li><a href="404.html">Error Page</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/login">Login</a></li>
+                            
                             <li data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="about.html">About</a></li>
                             <li class="uk-parent" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="#">Pages</a>
                                 <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1">
@@ -108,16 +91,8 @@
                                     <div class="uk-grid">
                                         <div class="uk-width-8-10 uk-push-1-10 intro-text">
                                           <div class="hero2">
-                                            <div class="chat">admin as mensagem.data_hora: mensagem.mensagem dsudgusyadgysuagduysagdysagdusya dsahdsahdgas dsagdysuagdyusagdsa udsahdusai</div>
-                                            <div class="chat"> as mensagem.data_hora: mensagem.mensagem</div>
-                                            <div class="chat"> as mensagem.data_hora: mensagem.mensagem</div>
-                                            <div class="chat"> as mensagem.data_hora: mensagem.mensagem</div>
-                                            <div class="chat"> as mensagem.data_hora: mensagem.mensagem</div>
-                                            <div class="chat"> as mensagem.data_hora: mensagem.mensagem</div>
-                                            <div class="chat"> as mensagem.data_hora: mensagem.mensagem</div>
-                                            <div class="chat"> as mensagem.data_hora: mensagem.mensagem</div>
-                                            <div class="chat"> as mensagem.data_hora: mensagem.mensagem</div>
-                                            <div class="chat"> as mensagem.data_hora: mensagem.mensagem</div>
+                                            <div class="chat" *ngFor="let mensagem of mensagens">{{mensagem.login}} as {{mensagem.data_hora}}: {{mensagem.mensagem}} dsudgusyadgysuagduysagdysagdusya dsahdsahdgas dsagdysuagdyusagdsa udsahdusai</div>
+                                            
                                           </div>
     
                                             <form class="labels-uppercase clearfix"><br><br><br>
@@ -157,51 +132,25 @@
                                             <br> consectetur adipiscing elit. Nulla sed turpis aliquet, pharetra enim sit amet, congue erat. </div>
                                     </div>
   
-                                    <article class="uk-width-large-1-2 uk-width-medium-1-1 uk-width-small-1-1 our-news-article" data-uk-grid-match="">
+                                    <article class="uk-width-large-1-2 uk-width-medium-1-1 uk-width-small-1-1 our-news-article" data-uk-grid-match="" *ngFor="let noticia of noticias | slice:0:2">
                                         <div class="img-wrap uk-cover-background uk-position-relative" style="background-image: url(assets/images/853d071dfa2f869fbd2a70dbcb3a8f5e.jpg); min-height: 280px;">
   
   
                                             <a href="news-single.html"></a>
-                                            <img class="uk-invisible" src="assets/images/853d071dfa2f869fbd2a70dbcb3a8f5e.jpg" alt="">
+                                            <img class="uk-invisible" src="{{noticia.img}}" alt="">
   
                                         </div>
                                         <div style="min-height: 280px;" class="info">
                                             <div class="date">
-                                                Nov 20, 2015 </div>
+                                                {{noticia.data}} </div>
                                             <div class="name">
                                                 <h4>
-                                                    <a href="news-single.html">Nullam enim ante, volutpat non viverra eget </a>	
+                                                    <a href="news-single.html">{{noticia.titulo}}</a>	
                                                 </h4>
                                             </div>
                                             <div class="text">
-                                                <p>Vivamus hendrerit, tortor sed luctus maximus, nunc urna hendrerit nibh, sit amet efficitur libero lorem quis mauris. Nunc a pulvinar lectus.</p>
-                                                <div class="read-more"><a href="news-single.html">Read More</a>
-                                                </div>
-                                            </div>
-                                        </div>
-  
-                                    </article>
-  
-  
-                                    <article class="uk-width-large-1-2 uk-width-medium-1-1 uk-width-small-1-1 our-news-article" data-uk-grid-match="">
-                                        <div class="img-wrap uk-cover-background uk-position-relative" style="background-image: url(assets/images/534579b3c373c09398691a46025fe5e6.jpg); min-height: 280px;">
-  
-  
-                                            <a href="news-single.html"></a>
-                                            <img class="uk-invisible" src="assets/images/534579b3c373c09398691a46025fe5e6.jpg" alt="">
-  
-                                        </div>
-                                        <div style="min-height: 280px;" class="info">
-                                            <div class="date">
-                                                Nov 20, 2015 </div>
-                                            <div class="name">
-                                                <h4>
-                                                    <a href="news-single.html">Cum sociis natoque penatibus et magnis dis parturient</a>		
-                                                </h4>
-                                            </div>
-                                            <div class="text">
-                                                <p>Vivamus hendrerit, tortor sed luctus maximus, nunc urna hendrerit nibh, sit amet efficitur libero lorem quis mauris. Nunc a pulvinar lectus.</p>
-                                                <div class="read-more"><a href="news-single.html">Read More</a>
+                                                <p>{{noticia.descricao | slice:0:120 }}</p>
+                                                <div class="read-more"><a href="news-single.html">Ler</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -210,7 +159,7 @@
   
                                 </div>
                             </div>
-                            <div class="all-news-btn"><a href="news.html"><span>All News</span></a>
+                            <div class="all-news-btn"><a href="news.html"><span>Ver todas</span></a>
                             </div>
   
                         </div>
@@ -234,16 +183,7 @@
                                             </div>
                                             <div class="match-list-single">
                                                 <div class="match-list-item">
-                                                    <div class="count">
-                                
-                                                        <div id="countdown4">
-                                                            <div class="counter_container">
-                                                            </div>
-                                                        </div>
-  
-                                                        <div class="clearfix"></div>
-  
-                                                    </div>
+                                                   <br><br><br>
                                                     <div class="clear"></div>
                                                     <div class="logo">
                                                         <a href="match-single.html">
