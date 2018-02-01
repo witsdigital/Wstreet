@@ -14,6 +14,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { User } from './providers/user.service';
+import { MenuComponent } from './pages/menu/menu.component';
 
 
 
@@ -23,7 +24,8 @@ import { User } from './providers/user.service';
     LoginComponent,
     HomeComponent,
     NoticiasComponent,
-    FooterComponent
+    FooterComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
