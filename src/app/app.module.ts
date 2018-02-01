@@ -15,6 +15,7 @@ import { RouterModule, PreloadAllModules } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { User } from './providers/user.service';
 import { MenuComponent } from './pages/menu/menu.component';
+import { MenuResponsiveComponent } from './pages/menu-responsive/menu-responsive.component';
 
 
 
@@ -25,7 +26,8 @@ import { MenuComponent } from './pages/menu/menu.component';
     HomeComponent,
     NoticiasComponent,
     FooterComponent,
-    MenuComponent
+    MenuComponent,
+    MenuResponsiveComponent
   ],
   imports: [
     BrowserModule,
