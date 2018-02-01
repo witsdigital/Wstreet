@@ -20,20 +20,17 @@ export class LoginComponent implements OnInit {
 
   responseData : any;
 
+  mensagemError;
+
   constructor(public user: User, private route: ActivatedRoute, private router: Router) { 
    
   }
 
   ngOnInit() {
-    if(localStorage.getItem('userData')){
-      this.router.navigate(['home']);
-   } else {
-    this.router.navigate(['login']);
-   }
+
   }
 
   logar() {
-    
     this.userData = {
       login: this.login,
       senha: this.senha
@@ -43,12 +40,14 @@ export class LoginComponent implements OnInit {
     console.log(this.userData);
 
     if(!this.login || !this.senha){
-      console.log('Digite dados validos')
+      this.mensagemError = "Preencha os campos"
+      console.log('Digite dados validos');
     }else{
         this.user.postDatas(this.userData,'signup').then((result) => {
          this.responseData = result;
          console.log(this.responseData[0].permissao);
          if(this.responseData[0].permissao==0){
+          this.mensagemError = "Login ou senha inválido"
              console.log('Login/Senha inválido')
          }else{
            localStorage.setItem('userData', JSON.stringify(this.responseData));

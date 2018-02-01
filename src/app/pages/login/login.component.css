@@ -19,4 +19,22 @@
 }
 
 
+.texto {
+	width: 100%; 
+	float: right;
+	background: rgb(0, 0, 0);
+	padding: 50px 30px;
+	color: #fff;
+}
+
+.texto h3 {
+	color: #fff;
+}
+
+.texto a {
+	color: rgb(7, 206, 0);
+	float: right;
+}
+
+
 

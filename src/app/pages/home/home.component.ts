@@ -13,6 +13,8 @@ export class HomeComponent implements OnInit {
   noticias: any = [];
   mensagens: any = [];
 
+
+
   constructor(public noticia: Noticias, public chat: Chat, private route: ActivatedRoute, private router: Router ) { 
     this.mensagens_chat();
     this.noticias_base();

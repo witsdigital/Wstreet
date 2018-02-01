@@ -30,58 +30,58 @@
 
 <!-- Login -->
 
-<div class="tm-top-c-box tm-full-width  home-about">
-  <div class="uk-container uk-container-center">
-      <section id="tm-top-c" class="tm-top-c uk-grid uk-grid-collapse" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin="">
+<div class="tm-top-e-box tm-full-width  va-main-next-match">
+    <div class="uk-container uk-container-center">
+        <section id="tm-top-e" class="tm-top-e uk-grid" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin="">
 
-          <div class="uk-width-1-1 uk-width-large-1-2">
-              <div class="uk-panel">
-                  <div class="va-about-wrap clearfix uk-cover-background uk-position-relative">
-                      <div class="va-about-text">
-                          <div class="title">Street <span>Coin</span>
-                          </div>
-                          <p>Nam quis purus sed est interdum sagittis sed in leo. Nunc feugiat enim nunc, sit amet placerat erat consectetur in. Cras consequat enim nunc, sit amet venenatis massa volutpat ut. Cras vitae facilisis nulla. </p>
-                          <p>Nulla pharetra lobortis nisl, vitae pretium nunc congue eget. Nunc imperdiet consequat nibh pharetra venenatis. Duis vitae lacinia nibh, et egestas leo. Proin sed mi sit amet dolor rhoncus tristique. Maecenas rhoncus felis vel congue commodo.</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-          <div class="uk-width-1-1 uk-width-large-1-2">
-              <div style="min-height: 497px;" class="uk-panel">
-                  <div class="trainers-module tm-trainers-slider ">
-                      <div class="trainer-wrapper">
-                       
-                              <div class="trainer-top">
-                                
-                                  <h3>Login</h3>
-                              </div>
-                              
-                                <div style="width: 275px; float: right;" >
-                                
-                                    <input type="text" [(ngModel)]="login" class="form-control"  name="login" placeholder="Nome de usuario/Email" required=""><br>
-                                     <input type="password" [(ngModel)]="senha" class="form-control"  name="senha" placeholder="Senha" required=""  style="margin-bottom:10px;">
-                                     <a href="#">Esqueceu a senha?</a>
-                                               <div class="form-group pull-right"  style="margin-top:10px;">
-                                               <button type="button" class="btn btn-default" onclick="window.location.href='#cadastrar'">Cadastrar</button>
-                                               <button type="button" class="btn btn-primary btn-rounded" (click)="logar()" >Entrar</button>
-                                             </div>
-                                  
+            <div class="uk-width-1-1">
+                <div class="uk-panel">
+                    <div class="uk-container uk-container-center">
+                        <div class="uk-grid uk-grid-collapse">
+                            <div class="uk-width-medium-1-2 uk-width-small-1-1 va-single-next-match">
+                                <div class="va-main-next-wrap">
+                                    <div class="main-next-match-title"><em>Street<span>Coin</span></em>
+                                    </div>
+                                    <div class="match-list-single">
+                                        <div class="match-list-item">
+                                            <p>Nam quis purus sed est interdum sagittis sed in leo. Nunc feugiat enim nunc, sit amet placerat erat consectetur in. Cras consequat enim nunc, sit amet venenatis massa volutpat ut. Cras vitae facilisis nulla. </p>
+                                            <p>Nulla pharetra lobortis nisl, vitae pretium nunc congue eget. Nunc imperdiet consequat nibh pharetra venenatis. Duis vitae lacinia nibh, et egestas leo. Proin sed mi sit amet dolor rhoncus tristique. Maecenas rhoncus felis vel congue commodo.</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                            <div class="uk-width-medium-1-2 uk-width-small-1-1 va-list-next-match">
+                             
+                                   
+                            <div class="texto" >
+                                    <h3>Login</h3>
+                            <h5 style="color: red;">{{mensagemError}}</h5>
                               
-                          
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section>
-  </div>
+                                  <input type="text" [(ngModel)]="login" class="form-control"  name="login" placeholder="Nome de usuario/Email" required=""><br>
+                                <input type="password" [(ngModel)]="senha" class="form-control"  name="senha" placeholder="Senha" required=""  style="margin-bottom:10px;">
+                                   <a href="#">Esqueceu a senha?</a><br>
+                                   <div style="margin-top:10px; float: right;">
+                                             <div class="form-group pull-right">
+                                             <button type="button" class="btn btn-default" onclick="window.location.href='#cadastrar'">Cadastrar</button>
+                                             <button type="button" class="btn btn-primary btn-rounded" (click)="logar()" >Entrar</button>
+                                           </div>
+                                        </div>
+                                
+                                </div>
+
+                                </div>
+                           
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
 </div>
 
 
 <!-- Chat-->
-
-
 
 <div class="tm-top-d-box  ">
           <div class="uk-container uk-container-center">
