@@ -13,6 +13,7 @@ import { FooterComponent } from './pages/footer/footer.component';
 import { HttpModule } from '@angular/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { User } from './providers/user.service';
 
 
 
@@ -32,7 +33,8 @@ import { FormsModule } from '@angular/forms';
   ],
   providers: [
     Chat,
-    Noticias
+    Noticias,
+    User
   ],
   bootstrap: [AppComponent]
 })

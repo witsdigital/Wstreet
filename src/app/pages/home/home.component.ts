@@ -1,3 +1,4 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { Chat } from './../../providers/chat.service';
 import { Noticias } from './../../providers/noticias.service';
 import { Component, OnInit } from '@angular/core';
@@ -12,12 +13,17 @@ export class HomeComponent implements OnInit {
   noticias: any = [];
   mensagens: any = [];
 
-  constructor(public noticia: Noticias, public chat: Chat ) { 
+  constructor(public noticia: Noticias, public chat: Chat, private route: ActivatedRoute, private router: Router ) { 
     this.mensagens_chat();
     this.noticias_base();
   }
 
   ngOnInit() {
+    if(localStorage.getItem('userData')){
+      this.router.navigate(['home']);
+   } else {
+    this.router.navigate(['login']);
+   }
   }
 
 
