@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { HomeComponent } from '../home/home.component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../../providers/user.service';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap/modal/modal';
 
 
 
@@ -21,15 +22,26 @@ export class LoginComponent implements OnInit {
 
   login;
   senha;
+
   userData: any = {};
   responseData : any;
-  mensagemError;
 
+  mensagemError;
   mensagemChatError
+  mensagemErrorCadastro;
+
+
   dados: any;
   texto;
 
-  constructor(public noticia: Noticias, public chat: Chat, public user: User, private route: ActivatedRoute, private router: Router) { 
+  cad_login;
+  cad_email;
+  cad_senha;
+
+  rec_email;
+  mensagemRecSenha;
+
+  constructor(public noticia: Noticias, public chat: Chat, public user: User, private route: ActivatedRoute, private router: Router, private modal: NgbModal) { 
     
     setInterval(() => { 
       this.mensagens_chat();
@@ -130,6 +142,24 @@ enviar() {
  
 }
 
+}
+
+
+
+openModal(modal){
+  this.modal.open(modal);
+}
+
+
+
+private getDismissReason(reason: any): string {
+  if (reason === ModalDismissReasons.ESC) {
+    return 'by pressing ESC';
+  } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+    return 'by clicking on a backdrop';
+  } else {
+    return  `with: ${reason}`;
+  }
 }
 
 

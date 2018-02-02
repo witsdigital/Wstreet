@@ -3,6 +3,7 @@ import { Chat } from './providers/chat.service';
 import { Noticias } from './providers/noticias.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 import { AppComponent } from './app.component';
@@ -18,6 +19,8 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { MenuResponsiveComponent } from './pages/menu-responsive/menu-responsive.component';
 import { Videos } from './providers/videos.service';
 import { TicketComponent } from './pages/ticket/ticket.component';
+import { PlantelComponent } from './pages/plantel/plantel.component';
+import { DesafiosComponent } from './pages/desafios/desafios.component';
 
 
 
@@ -30,13 +33,16 @@ import { TicketComponent } from './pages/ticket/ticket.component';
     FooterComponent,
     MenuComponent,
     MenuResponsiveComponent,
-    TicketComponent
+    TicketComponent,
+    PlantelComponent,
+    DesafiosComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules}),
-    FormsModule
+    FormsModule,
+    NgbModule.forRoot()
   ],
   providers: [
     Chat,

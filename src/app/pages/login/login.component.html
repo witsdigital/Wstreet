@@ -59,10 +59,10 @@
                               
                                   <input type="text" [(ngModel)]="login" class="form-control"  name="login" placeholder="Nome de usuario/Email" required=""><br>
                                 <input type="password" [(ngModel)]="senha" class="form-control"  name="senha" placeholder="Senha" required=""  style="margin-bottom:10px;">
-                                   <a href="#">Esqueceu a senha?</a><br>
+                                   <a (click)="openModal(modalRecSenha)" >Esqueceu a senha?</a><br>
                                    <div style="margin-top:10px; float: right;">
                                              <div class="form-group pull-right">
-                                             <button type="button" class="btn btn-default" onclick="window.location.href='#cadastrar'">Cadastrar</button>
+                                             <button type="button" class="btn btn-default" (click)="openModal(modalCadastro)">Cadastrar</button>
                                              <button type="button" class="btn btn-primary btn-rounded" (click)="logar()" >Entrar</button>
                                            </div>
                                         </div>
@@ -134,11 +134,11 @@
                                   </div>
 
                                   <article class="uk-width-large-1-2 uk-width-medium-1-1 uk-width-small-1-1 our-news-article" data-uk-grid-match="" *ngFor="let noticia of noticias | slice:0:2">
-                                        <div class="img-wrap uk-cover-background uk-position-relative" style="background-image: url(assets/images/853d071dfa2f869fbd2a70dbcb3a8f5e.jpg); min-height: 280px;">
+                                        <div class="img-wrap uk-cover-background uk-position-relative">
   
   
                                             <a href="news-single.html"></a>
-                                            <img class="uk-invisible" src="{{noticia.img}}" alt="">
+                                            <img class="uk-visible" style="min-height: 280px;" src="{{noticia.img}}" alt="">
   
                                         </div>
                                         <div style="min-height: 280px;" class="info">
@@ -398,3 +398,58 @@
           </div>
       </div>
 
+
+
+      <!-- cadastrar -->
+      <ng-template #modalCadastro let-c="close" let-d="dismiss">
+            <div class="modal-header">
+                    <h2 class="modal-title">Cadastro</h2>
+                  </div>
+
+
+                  <div class="texto2" style="background-image: url(assets/images/verde.jpg);">
+                <h5 style="color: red;">{{mensagemErrorCadastro}}</h5>
+                  
+                      <input type="text" [(ngModel)]="cad_login" class="form-control"  name="login" placeholder="Nome de usuario" required=""><br>
+                      <input type="text" [(ngModel)]="cad_email" class="form-control"  name="email" placeholder="Email" required=""><br>
+                    <input type="password" [(ngModel)]="cad_senha" class="form-control"  name="senha" placeholder="Senha" required=""  style="margin-bottom:10px;">
+                       <div style="margin-top:10px; float: right;">
+                            <div class="form-group pull-right">
+                                    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Cancelar</button>
+                          
+                                    <button type="button" class="btn btn-primary btn-rounded" (click)="logar()" >Cadastrar</button>
+                                    
+                            </div>
+                            </div>
+                    
+                    </div>
+
+
+      </ng-template>
+
+
+
+            <!-- recuperar senha -->
+            <ng-template #modalRecSenha let-c="close" let-d="dismiss">
+                    <div class="modal-header">
+                            <h2 class="modal-title">Cadastro</h2>
+                          </div>
+        
+        
+                          <div class="texto2" style="background-image: url(assets/images/verde.jpg);">
+                        <h5 style="color: red;">{{mensagemRecSenha}}</h5>
+                          
+                        <input type="text" [(ngModel)]="rec_email" class="form-control"  name="email" placeholder="Email" required=""><br>
+                              <div style="margin-top:10px; float: right;">
+                                    <div class="form-group pull-right">
+                                            <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Cancelar</button>
+                                  
+                                            <button type="button" class="btn btn-primary btn-rounded" (click)="recuperar()" >Recuperar</button>
+                                            
+                                    </div>
+                                    </div>
+                            
+                            </div>
+        
+        
+              </ng-template>
