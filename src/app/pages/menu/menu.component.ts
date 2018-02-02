@@ -11,11 +11,11 @@ export class MenuComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-  if(localStorage.getItem('userData')){
-    this.router.navigate(['home']);
-  } else {
-  this.router.navigate(['login']);
-  }
+    if(localStorage.getItem('userData')){
+      
+    } else {
+    this.router.navigate(['login']);
+    }
 }
 
   sair() {

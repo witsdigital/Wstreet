@@ -78,11 +78,11 @@
                                     </div>
   
                                     <article class="uk-width-large-1-2 uk-width-medium-1-1 uk-width-small-1-1 our-news-article" data-uk-grid-match="" *ngFor="let noticia of noticias | slice:0:2">
-                                        <div class="img-wrap uk-cover-background uk-position-relative" style="background-image: url(assets/images/853d071dfa2f869fbd2a70dbcb3a8f5e.jpg); min-height: 280px;">
+                                        <div class="img-wrap uk-cover-background uk-position-relative" style=" min-height: 280px;">
   
   
                                             <a href="news-single.html"></a>
-                                            <img class="uk-invisible" src="{{noticia.img}}" alt="">
+                                            <img style="min-height: 280px;" src="{{noticia.img}}" alt="">
   
                                         </div>
                                         <div style="min-height: 280px;" class="info">
@@ -877,9 +877,11 @@
                                                 Nullam quis eros tellus. Duis sit amet neque nec orci feugiat tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed turpis aliquet, pharetra enim sit amet, congue erat.
                                             </div>
                                         </div>
-                                        <div class="uk-width-medium-8-10 uk-width-small-1-1 uk-push-1-10">
-                                            <iframe src="https://www.youtube.com/embed/_u20ZIIxwuc?rel=0&amp;showinfo=0" allowfullscreen="" height="546" width="970"></iframe>
-                                        </div>
+                                     
+                                                <div class="uk-width-medium-8-10 uk-width-small-1-1 uk-push-1-10" *ngFor="let video of videos | slice:0:1">
+                                                        <iframe src="https://www.youtube.com/embed/_u20ZIIxwuc?rel=0&amp;showinfo=0" allowfullscreen="" height="546" width="970"></iframe>
+                                                </div>
+                                        
                                         
                                     </div>
                                 </div>

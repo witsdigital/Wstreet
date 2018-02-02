@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { User } from './providers/user.service';
 import { MenuComponent } from './pages/menu/menu.component';
 import { MenuResponsiveComponent } from './pages/menu-responsive/menu-responsive.component';
+import { Videos } from './providers/videos.service';
+import { TicketComponent } from './pages/ticket/ticket.component';
 
 
 
@@ -27,7 +29,8 @@ import { MenuResponsiveComponent } from './pages/menu-responsive/menu-responsive
     NoticiasComponent,
     FooterComponent,
     MenuComponent,
-    MenuResponsiveComponent
+    MenuResponsiveComponent,
+    TicketComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import { MenuResponsiveComponent } from './pages/menu-responsive/menu-responsive
   providers: [
     Chat,
     Noticias,
-    User
+    User,
+    Videos
   ],
   bootstrap: [AppComponent]
 })

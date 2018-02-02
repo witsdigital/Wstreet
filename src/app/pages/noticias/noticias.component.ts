@@ -1,4 +1,6 @@
+import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { Noticias } from '../../providers/noticias.service';
 
 @Component({
   selector: 'street-noticias',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoticiasComponent implements OnInit {
 
-  constructor() { }
+  noticias: any = [];
+
+  constructor(public noticia: Noticias, private route: ActivatedRoute, private router: Router) { 
+    this.noticias_base();
+  }
 
   ngOnInit() {
+
   }
+
+  noticias_base(){
+    this.noticia.getNoticias_base().subscribe((data)=>{
+      this.noticias = data;
+  
+    },(erro)=>{
+      console.log(erro);
+    });
+  
+  }
+
+
 
 }

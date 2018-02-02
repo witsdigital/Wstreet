@@ -7,38 +7,18 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
 
 @Injectable()
-export class Chat {
+export class Videos {
 
     api:string = 'http://meupainel.com.br/streetcoin/api/';
 
     constructor(public http: Http) {
      }
 
-
-
-      getChat(): Observable<any[]>{
-        return this.http.get(this.api+'chat/mensagens')
-        .map(response=>response.json())
+      getVideos(){
+        return this.http.get(this.api+'videos/getvideos')
+        .map(res=>res.json())
         .catch(err=> Observable.throw(err.message));
     }
-
-
-    postMensagens(credentials) {
-        return new Promise((resolve, reject) => {
-          let headers = new Headers();
-      
-          this.http.post(this.api+'chat/enviarmensagem', JSON.stringify(credentials), {headers: headers})
-            .subscribe(res => {
-              resolve(res.json());
-            }, (err) => {
-              reject(err);
-            });
-        });
-      
-      }
-
-
-
 
     private handleError(error: Response) {
         console.error(error);

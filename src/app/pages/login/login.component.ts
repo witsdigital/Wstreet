@@ -1,3 +1,5 @@
+import { Chat } from './../../providers/chat.service';
+import { Noticias } from './../../providers/noticias.service';
 
 import { FormsModule } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
@@ -14,16 +16,26 @@ import { User } from '../../providers/user.service';
 })
 export class LoginComponent implements OnInit {
 
+  noticias: any = [];
+  mensagens: any = [];
+
   login;
   senha;
   userData: any = {};
-
   responseData : any;
-
   mensagemError;
 
-  constructor(public user: User, private route: ActivatedRoute, private router: Router) { 
-   
+  mensagemChatError
+  dados: any;
+  texto;
+
+  constructor(public noticia: Noticias, public chat: Chat, public user: User, private route: ActivatedRoute, private router: Router) { 
+    
+    setInterval(() => { 
+      this.mensagens_chat();
+     }, 1000);
+
+   this.noticias_base();
   }
 
   ngOnInit() {
@@ -68,5 +80,57 @@ export class LoginComponent implements OnInit {
   }
 
 }
+
+
+
+
+noticias_base(){
+  this.noticia.getNoticias_base().subscribe((data)=>{
+    this.noticias = data;
+
+  },(erro)=>{
+    console.log(erro);
+  });
+
+}
+
+mensagens_chat() {
+
+  this.chat.getChat().subscribe((data)=>{
+    this.mensagens = data;
+
+  },(erro)=>{
+    console.log(erro);
+  });
+
+}
+
+
+
+enviar() {
+
+  this.dados = {
+  cod_equipe: 0,
+  mensagem: this.texto
+}
+
+  if(!this.texto){
+    this.mensagemChatError = "Digite uma mensagem valida";
+    console.log('Digite dados validos');
+  }else{
+      this.chat.postMensagens(this.dados).then((result) => {
+       this.responseData = result;
+       console.log(this.responseData[0].permissao);
+       if(this.responseData[0].permissao==0){
+        this.mensagemChatError = "Desculpe, ocorreu um erro";
+       }
+     }, (err) => {
+      
+     });
+ 
+}
+
+}
+
 
 }

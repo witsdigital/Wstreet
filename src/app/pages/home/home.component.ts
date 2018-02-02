@@ -4,6 +4,10 @@ import { Chat } from './../../providers/chat.service';
 import { Noticias } from './../../providers/noticias.service';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Videos } from '../../providers/videos.service';
+
+import { DomSanitizer } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'street-home',
@@ -14,6 +18,7 @@ export class HomeComponent implements OnInit {
 
   noticias: any = [];
   mensagens: any = [];
+  videos: any = [];
 
   texto;
   responseData : any;
@@ -23,7 +28,7 @@ export class HomeComponent implements OnInit {
   dados: any;
 
 
-  constructor(public noticia: Noticias, public chat: Chat, private route: ActivatedRoute, private router: Router ) { 
+  constructor(private sanitize: DomSanitizer, public video: Videos, public noticia: Noticias, public chat: Chat, private route: ActivatedRoute, private router: Router ) { 
     
     
     setInterval(() => { 
@@ -31,20 +36,13 @@ export class HomeComponent implements OnInit {
       }, 1000);
 
     this.noticias_base();
+   
     this.userData = JSON.parse(localStorage.getItem('userData'));
-    console.log(this.userData);
+ 
   }
 
   ngOnInit() {
-   
-    
-    
-    
-    if(localStorage.getItem('userData')){
-      this.router.navigate(['home']);
-   } else {
-    this.router.navigate(['login']);
-   }
+    this.getvideo();
   }
 
 
@@ -94,6 +92,20 @@ enviar() {
  
 }
 
+}
+
+getvideo(){
+  this.video.getVideos().subscribe((data)=>{
+    this.videos = data;
+    console.log(this.videos);
+  },(erro)=>{
+    console.log(erro);
+  });
+
+}
+
+geturl(item){
+  return this.sanitize.bypassSecurityTrustResourceUrl(item);
 }
 
 

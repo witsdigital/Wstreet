@@ -1,0 +1,90 @@
+<street-menu></street-menu>
+
+
+
+<div class="tm-top-a-box tm-full-width tm-box-bg-1 ">
+    <div class="uk-container uk-container-center">
+        <section id="tm-top-a" class="tm-top-a uk-grid uk-grid-collapse" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin="">
+            <div class="uk-width-1-1 uk-row-first">
+                <div class="uk-panel">
+                    <div class="uk-cover-background uk-position-relative head-wrap" style="height: 290px; background-image: url('/assets/images/head-bg.jpg');">
+                        <img class="uk-invisible" src="assets/images/head-bg.jpg" alt="" height="290" width="1920">
+                        <div class="uk-position-cover uk-flex uk-flex-center head-title">
+                            <h1>
+                                Tickets
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+<!-- ticket -->
+
+<div class="tm-top-e-box tm-full-width  va-main-next-match1">
+    <div class="uk-container uk-container-center">
+        <section id="tm-top-e" class="tm-top-e uk-grid" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin="">
+
+            <div class="uk-width-1-1">
+                <div class="uk-panel">
+                    <div class="uk-container uk-container-center">
+                        <div class="uk-grid uk-grid-collapse">
+                            <div class="uk-width-medium-1-2 uk-width-small-1-1 va-single-next-match">
+                                <div class="va-main-next-wrap">
+                                    <div class="main-next-match-title"><em>Em que podemos Ajudar?<span></span></em>
+                                    </div>
+                                    <div class="match-list-single">
+                                        <div class="match-list-item"><br>
+                                            <p>Tire suas duvidas, nos encaminhe sua mensagem.</p>
+                                            <p>Nulla pharetra lobortis nisl, vitae pretium nunc congue eget. Nunc imperdiet consequat nibh pharetra venenatis. Duis vitae lacinia nibh, et egestas leo. Proin sed mi sit amet dolor rhoncus tristique. Maecenas rhoncus felis vel congue commodo.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="uk-width-medium-1-2 uk-width-small-1-1 va-list-next-match">
+                             
+                                   
+                            <div class="texto" >
+                            <h5 style="color: red;">{{mensagemError}}</h5>
+                              
+                                  <input type="text" [(ngModel)]="assunto" class="form-control"  name="login" placeholder="Assunto*" required=""><br>
+                                  <label for="departamento">Departamento:*</label>
+                                  <select class="form-control">
+                                      <option value="volvo">Volvo</option>
+                                      <option value="saab">Saab</option>
+                                      <option value="mercedes">Mercedes</option>
+                                      <option value="audi">Audi</option>
+                                    </select><br>
+                                    <label for="prioridade">Prioridade:*</label>
+                                    <select class="form-control">
+                                        <option value="volvo">Muito Alta</option>
+                                        <option value="saab">Alta</option>
+                                        <option value="mercedes">Media</option>
+                                        <option value="audi">Baixa</option>
+                                      </select><br>
+                                  <textarea class="form-control" rows="8" id="comment" placeholder="Mensagem*"></textarea>
+                                   <div style="margin-top:10px; float: right;">
+                                             <div class="form-group pull-right">
+                                             <button type="button" class="btn btn-primary btn-rounded">Enviar</button>
+                                           </div>
+                                        </div>
+                                
+                                </div>
+
+                                </div>
+                           
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+
+<street-menu-responsive></street-menu-responsive>
