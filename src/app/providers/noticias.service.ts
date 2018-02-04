@@ -18,6 +18,11 @@ export class Noticias {
         return this.http.get(this.api+'noticias/getappnoticias_base').map(res=> res.json())
       }
 
+
+      getNoticiaid(id) {
+        return this.http.get(this.api+'noticias/getNoticiaid/'+id).map(res=> res.json())
+      }
+
      
     
 }

@@ -36,6 +36,21 @@ export class User {
     }
 
 
+    getUserId(credentials) {
+      return new Promise((resolve, reject) => {
+        let headers = new Headers();
+    
+        this.http.post(this.api+'cliente/getUserId', JSON.stringify(credentials), {headers: headers})
+          .subscribe(res => {
+            resolve(res.json());
+          }, (err) => {
+            reject(err);
+          });
+      });
+    
+    }
+
+
     private handleError(error: Response) {
         console.error(error);
         return Observable.throw(error.json().error || 'Server error');

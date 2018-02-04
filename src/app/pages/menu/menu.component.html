@@ -17,7 +17,7 @@
                                 <div class="uk-width-1-1">
                                     <ul class="uk-nav uk-nav-navbar">
                                         <li><a [routerLink]="['/plantel']">Meu time</a></li>
-                                        <li><a href="gallery.html">Desafios</a></li>
+                                        <li><a [routerLink]="['/desafios']">Desafios</a></li>
                                         <li><a href="players.html">Torneio</a></li>
                                         
                                     </ul>
@@ -26,14 +26,25 @@
                         </div>
                     </li>
                     <li><a [routerLink]="['/noticias']">Noticias</a></li>
-                    <li><a href="#">Ajuda Mutua</a></li>
+                    <li class="uk-parent" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="#">Financeiro</a>
+                        <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1">
+                            <div class="uk-grid uk-dropdown-grid">
+                                <div class="uk-width-1-1">
+                                    <ul class="uk-nav uk-nav-navbar">
+                                        <li><a [routerLink]="['/ajuda']">Ajuda Mutua</a></li>
+                                        <li><a [routerLink]="['/saque']">Saque/Depositos</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                    
                     <li class="uk-parent" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="#">Configurações</a>
                       <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1">
                           <div class="uk-grid uk-dropdown-grid">
                               <div class="uk-width-1-1">
                                   <ul class="uk-nav uk-nav-navbar">
-                                      <li><a href="players.html">Perfil</a></li>
+                                      <li><a [routerLink]="['/perfil']">Perfil</a></li>
                                       <li><a href="players.html">Instruções</a></li>
                                       <li><a [routerLink]="['/tickets']">Tickets</a></li>
                                       <li><a href="#" (click)="sair()">Sair</a></li>

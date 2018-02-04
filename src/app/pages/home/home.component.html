@@ -90,12 +90,12 @@
                                                 {{noticia.data}} </div>
                                             <div class="name">
                                                 <h4>
-                                                    <a href="news-single.html">{{noticia.titulo}}</a>	
+                                                    <a [routerLink]="['/noticia', noticia.id]">{{noticia.titulo}}</a>	
                                                 </h4>
                                             </div>
                                             <div class="text">
                                                 <p>{{noticia.descricao | slice:0:120 }}</p>
-                                                <div class="read-more"><a href="news-single.html">Ler</a>
+                                                <div class="read-more"><a [routerLink]="['/noticia', noticia.id]">Ler</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -104,7 +104,7 @@
   
                                 </div>
                             </div>
-                            <div class="all-news-btn"><a href="news.html"><span>Ver todas</span></a>
+                            <div class="all-news-btn"><a [routerLink]="['/noticias']"><span>Ver todas</span></a>
                             </div>
   
                         </div>

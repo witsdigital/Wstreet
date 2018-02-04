@@ -21,6 +21,8 @@ import { Videos } from './providers/videos.service';
 import { TicketComponent } from './pages/ticket/ticket.component';
 import { PlantelComponent } from './pages/plantel/plantel.component';
 import { DesafiosComponent } from './pages/desafios/desafios.component';
+import { NoticiasdetalheComponent } from './pages/noticiasdetalhe/noticiasdetalhe.component';
+import { PerfilComponent } from './pages/perfil/perfil.component';
 
 
 
@@ -35,7 +37,9 @@ import { DesafiosComponent } from './pages/desafios/desafios.component';
     MenuResponsiveComponent,
     TicketComponent,
     PlantelComponent,
-    DesafiosComponent
+    DesafiosComponent,
+    NoticiasdetalheComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

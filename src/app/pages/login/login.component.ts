@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { HomeComponent } from '../home/home.component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../../providers/user.service';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap/modal/modal';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap/modal/modal';
 
 
 
@@ -18,6 +18,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap/modal/
 export class LoginComponent implements OnInit {
 
   noticias: any = [];
+  noticiaDetalhe: any = [];
   mensagens: any = [];
 
   login;
@@ -37,6 +38,7 @@ export class LoginComponent implements OnInit {
   cad_login;
   cad_email;
   cad_senha;
+  cad_senha2;
 
   rec_email;
   mensagemRecSenha;
@@ -92,6 +94,35 @@ export class LoginComponent implements OnInit {
   }
 
 }
+
+
+cadastrar() {
+
+  this.userData = {
+    login: this.cad_login,
+    senha: this.cad_senha,
+    email: this.cad_email
+  }
+
+
+
+
+  if(!this.cad_login || !this.cad_senha || !this.cad_senha || !this.cad_senha2){
+    this.mensagemErrorCadastro = "Preencha todos os campos"
+    console.log('Digite dados validos');
+  }
+  
+  if(this.cad_senha != this.cad_senha2){
+    this.mensagemErrorCadastro = "As senhas não correspondem"
+    console.log('Digite dados validos');
+  }
+  
+  else{
+    
+}
+
+}
+
 
 
 
@@ -151,16 +182,14 @@ openModal(modal){
 }
 
 
-
-private getDismissReason(reason: any): string {
-  if (reason === ModalDismissReasons.ESC) {
-    return 'by pressing ESC';
-  } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-    return 'by clicking on a backdrop';
-  } else {
-    return  `with: ${reason}`;
-  }
+openModalNoticia(noticia, modal){
+  this.noticiaDetalhe = noticia;
+  this.modal.open(modal);
 }
+
+
+
+
 
 
 }

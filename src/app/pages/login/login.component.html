@@ -151,7 +151,7 @@
                                             </div>
                                             <div class="text">
                                                 <p>{{noticia.descricao | slice:0:120 }}</p>
-                                                <div class="read-more"><a href="news-single.html">Ler</a>
+                                                <div class="read-more"><a (click)="openModalNoticia(noticia, modalNoticia)">Ler</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -408,16 +408,18 @@
 
 
                   <div class="texto2" style="background-image: url(assets/images/verde.jpg);">
-                <h5 style="color: red;">{{mensagemErrorCadastro}}</h5>
+                <h4 style="color: red; font-weight: bold; ">{{mensagemErrorCadastro}}</h4>
                   
                       <input type="text" [(ngModel)]="cad_login" class="form-control"  name="login" placeholder="Nome de usuario" required=""><br>
                       <input type="text" [(ngModel)]="cad_email" class="form-control"  name="email" placeholder="Email" required=""><br>
-                    <input type="password" [(ngModel)]="cad_senha" class="form-control"  name="senha" placeholder="Senha" required=""  style="margin-bottom:10px;">
-                       <div style="margin-top:10px; float: right;">
+                    <input type="password" [(ngModel)]="cad_senha" class="form-control"  name="senha" placeholder="Senha" required=""  style="margin-bottom:10px;"><br>
+                    <input type="password" [(ngModel)]="cad_senha2" class="form-control"  name="senha" placeholder="Repetir Senha" required=""  style="margin-bottom:10px;"><br>
+                          
+                    <div style="margin-top:10px; float: right;">
                             <div class="form-group pull-right">
                                     <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Cancelar</button>
                           
-                                    <button type="button" class="btn btn-primary btn-rounded" (click)="logar()" >Cadastrar</button>
+                                    <button type="button" class="btn btn-primary btn-rounded" (click)="cadastrar()" >Cadastrar</button>
                                     
                             </div>
                             </div>
@@ -432,7 +434,7 @@
             <!-- recuperar senha -->
             <ng-template #modalRecSenha let-c="close" let-d="dismiss">
                     <div class="modal-header">
-                            <h2 class="modal-title">Cadastro</h2>
+                            <h2 class="modal-title">Recuperação de senha</h2>
                           </div>
         
         
@@ -451,5 +453,23 @@
                             
                             </div>
         
+        
+              </ng-template>
+
+
+
+              <ng-template #modalNoticia let-c="close" let-d="dismiss">
+                    <div class="modal-header" >
+                            <h2 class="modal-title">{{noticiaDetalhe.titulo}}</h2>
+                          </div>
+                          <div class="noticiaModal">
+                          <img src="{{noticiaDetalhe.img}}"><br><br>
+                          {{noticiaDetalhe.data}}<br><br>
+                          {{noticiaDetalhe.descricao}}
+                          <br><br>
+                        </div>
+                            <div class="modal-footer">
+                                    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Fechar</button>
+                            </div>
         
               </ng-template>
