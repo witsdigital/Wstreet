@@ -114,10 +114,13 @@
 
 
             <!-- rpesquisa jogador -->
-            <ng-template #modalPesquisarJogadores let-c="close" let-d="dismiss" >
+            <ng-template #modalPesquisarJogadores let-c="close" let-d="dismiss">
                 <div class="modal-header">
                         <h2 class="modal-title">Pesquisar Jogador</h2>
+                        <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">X</button>
+          
                       </div>
+                      <div class="list-players-wrap" style="margin: 0 auto;">
                       <div class="content">
                           <h5 style="color:red;">{{mensagemError}}</h5>
                         <div class="card" style="background-image: url('/assets/images/cards/lendario.png');" *ngFor="let card of cards">
@@ -133,11 +136,10 @@
                         </div>
                         </div>
                       </div>
+                    </div>
 
-
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Fechar</button>
-                </div>
+                     
+                        
     
     
     
