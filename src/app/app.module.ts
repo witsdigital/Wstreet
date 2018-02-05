@@ -23,6 +23,7 @@ import { PlantelComponent } from './pages/plantel/plantel.component';
 import { DesafiosComponent } from './pages/desafios/desafios.component';
 import { NoticiasdetalheComponent } from './pages/noticiasdetalhe/noticiasdetalhe.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
+import { Equipe } from './providers/equipe.service';
 
 
 
@@ -52,7 +53,8 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
     Chat,
     Noticias,
     User,
-    Videos
+    Videos,
+    Equipe
   ],
   bootstrap: [AppComponent]
 })

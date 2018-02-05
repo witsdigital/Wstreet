@@ -1,0 +1,57 @@
+.content {
+    margin: 0 auto;
+    text-align: center;
+    min-height: 150px;
+}
+
+
+
+.card {
+    text-align: center;
+    width: 150px;
+    height: 350px;
+    margin: 15px 5px;
+    background-size: 150px 250px;
+    background-repeat: no-repeat;
+    float: left;
+}
+
+.card img {
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+
+}
+
+
+.plantel {
+    text-align: center;
+    width: 150px;
+    height: 350px;
+    margin: 15px 5px;
+    background-size: 150px 255px;
+    background-repeat: no-repeat;
+    float: left;
+    color: blanchedalmond;
+    font-weight: bold;
+
+}
+
+.plantel img {
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+
+}
+
+
+.atributo img{
+    width: 22px;
+    height: 18px;
+  
+}
+
+.info {
+    margin-top: 45px;
+    color: black;
+}
