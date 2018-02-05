@@ -24,6 +24,8 @@ import { DesafiosComponent } from './pages/desafios/desafios.component';
 import { NoticiasdetalheComponent } from './pages/noticiasdetalhe/noticiasdetalhe.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { Equipe } from './providers/equipe.service';
+import { ChatComponent } from './pages/chat/chat.component';
+import { HeaderComponent } from './pages/header/header.component';
 
 
 
@@ -40,14 +42,16 @@ import { Equipe } from './providers/equipe.service';
     PlantelComponent,
     DesafiosComponent,
     NoticiasdetalheComponent,
-    PerfilComponent
+    PerfilComponent,
+    ChatComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules}),
     FormsModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
   ],
   providers: [
     Chat,

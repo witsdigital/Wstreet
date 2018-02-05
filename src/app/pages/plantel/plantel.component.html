@@ -1,26 +1,7 @@
 <street-menu></street-menu>
 
 
-<div class="tm-top-a-box tm-full-width tm-box-bg-1 ">
-  <div class="uk-container uk-container-center">
-      <section id="tm-top-a" class="tm-top-a uk-grid uk-grid-collapse" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin="">
-          <div class="uk-width-1-1 uk-row-first">
-              <div class="uk-panel">
-                  <div class="uk-cover-background uk-position-relative head-wrap" style="height: 290px; background-image: url('/assets/images/head-bg.jpg');">
-                      <img class="uk-invisible" src="assets/images/head-bg.jpg" alt="" height="290" width="1920">
-                      <div class="uk-position-cover uk-flex uk-flex-center head-title">
-                          <h1>
-                              Meu time
-                          </h1>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section>
-  </div>
-</div>
 
-<br><br>
 
 
 <div class="uk-container uk-container-center">
@@ -82,12 +63,18 @@
                                     DEF: {{card.defesa}}<br>
                                     ATK: {{card.ataque}}<br>
                                     RES: {{card.resistencia}}<br>
-                                    <div class="posicao">{{card.posicao}}</div>
+                                    <div class="posicao" *ngIf="card.posicao==1">Goleiro</div>
+                                    <div class="posicao" *ngIf="card.posicao==2">Zagueiro</div>
+                                    <div class="posicao" *ngIf="card.posicao==3">Lateral</div>
+                                    <div class="posicao" *ngIf="card.posicao==4">Volante</div>
+                                    <div class="posicao" *ngIf="card.posicao==5">Meio Campo</div>
+                                    <div class="posicao" *ngIf="card.posicao==6">Atacante</div>
+                                   
                                
                                     <div class="info">
                                     {{card.nome}}<br>
                                     LTC: <font color="red">{{card.valor}}</font><br>
-                                    <button class="btn btn-danger" (click)="vender(card)">Vender</button>
+                                    <button class="btn btn-danger" (click)="openModalVenda(modalVenda, card)">Vender</button>
                                 </div>
                                 </div>
                             
@@ -128,7 +115,12 @@
                             DEF: {{card.defesa}}<br>
                             ATK: {{card.ataque}}<br>
                             RES: {{card.resistencia}}<br>
-                            <div class="posicao">{{card.posicao}}</div>
+                            <div class="posicao" *ngIf="card.posicao==1">Goleiro</div>
+                            <div class="posicao" *ngIf="card.posicao==2">Zagueiro</div>
+                            <div class="posicao" *ngIf="card.posicao==3">Lateral</div>
+                            <div class="posicao" *ngIf="card.posicao==4">Volante</div>
+                            <div class="posicao" *ngIf="card.posicao==5">Meio Campo</div>
+                            <div class="posicao" *ngIf="card.posicao==6">Atacante</div>
                             <div class="info">
                             {{card.nome}}<br>
                             LTC: <font color="green">{{card.valor}}</font><br>
@@ -144,3 +136,25 @@
     
     
           </ng-template>
+
+
+
+
+          <ng-template #modalVenda let-c="close" let-d="dismiss">
+            <div class="modal-header">
+                    <h2 class="modal-title">Vender Jogador</h2>
+      
+                  </div>
+                  <div class="info" style="text-align: center;">
+                      <h3>Deseja realmente vender o jogador {{venda.nome}}?</h3>
+                  </div>
+
+                 
+            <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Cancelar</button>
+                    <button type="button" class="btn btn-danger" (click)="vender(venda); c('Close click')">Vender</button>
+            </div>
+
+
+
+      </ng-template>

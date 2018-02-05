@@ -17,7 +17,7 @@ export class PlantelComponent implements OnInit {
   userData: any;
   time: any = [];
 
-
+  venda: any;
   dados: any;
 
   mensagemError;
@@ -117,7 +117,17 @@ if ( this.plantel.length < 22) {
 
     } 
 
+
 vender(item){
+  this.equipe.PostVenda(item).then((result) => {
+    this.responseData = result;
+    console.log(this.responseData);
+    if(this.responseData.permissao==0){
+     this.mensagemError = "Desculpe, ocorreu um erro";
+    } 
+  }, (err) => {
+   console.log('erro')
+  });
 
 }
 
@@ -125,4 +135,10 @@ vender(item){
   openModal(modal){
     this.modal.open(modal);
   }
+
+  openModalVenda(modal, card){
+    this.venda = card;
+    this.modal.open(modal);
+  }
+
 }
