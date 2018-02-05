@@ -1,6 +1,7 @@
 import { Equipe } from './../../providers/equipe.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap/modal/modal';
 import { Component, OnInit } from '@angular/core';
+import { get } from 'selenium-webdriver/http';
 
 @Component({
   selector: 'street-plantel',
@@ -10,15 +11,28 @@ import { Component, OnInit } from '@angular/core';
 export class PlantelComponent implements OnInit {
 
   cards: any = [];
-
   plantel: any = [];
-
   escalacao: any= [];
 
+  userData: any;
+  time: any = [];
+
+
+  dados: any;
 
   mensagemError;
+  responseData: any = [];
 
   constructor(private modal: NgbModal, public equipe: Equipe) { 
+    this.userData = JSON.parse(localStorage.getItem('userData'));
+    this.getTime();
+
+
+    setInterval(() => { 
+      this.getPlantel();
+     }, 2000);
+
+    
     this.getCards();
   }
 
@@ -39,36 +53,68 @@ export class PlantelComponent implements OnInit {
   
   }
 
+  getTime(){
+    this.equipe.getTime(this.userData[0].id).then((data)=>{
+        this.time = data;
+
+    },(err)=>{
+
+    });
+
+  
+}
+
+getPlantel(){
+  this.equipe.getPlantel(this.userData[0].id).then((data)=>{
+      this.plantel = data;
+
+  },(err)=>{
+
+  });
+
+
+}
+
+
+
+
+
+
+
   comprar(item) {
 
 
 if ( this.plantel.length < 22) {
 
-    
-    var count = 0;
-    if (this.plantel.length==0){
-      this.plantel.push(item);
-    } else {
 
-      for (var i = 0; i < this.plantel.length; i++) {
-        if (item == this.plantel[i]){
-          this.mensagemError="Você já comprou esse Jogador";
-          count++;
-      }
-    }
-    if (count == 0) {
-      this.plantel.push(item);
+  this.dados = {
+    cod_card: item.id,
+    cod_time: this.time[0].id,
+    estado: 0
+  }
+
+            this.equipe.postPlantelCompra(this.dados).then((result) => {
+             this.responseData = result;
+             console.log(this.responseData);
+             if(this.responseData.permissao==2){
+              this.mensagemError = "Você ja comprou esse Jogador";
+             }
+             if(this.responseData.permissao==0){
+              this.mensagemError = "Desculpe, ocorreu um erro";
+             } 
+              
+           }, (err) => {
+            console.log('erro')
+           });
+       
       this.mensagemError='';
     }
 
     } 
 
-
-  } else {
-    this.mensagemError="Voê já possui 22 jogadores"
-  }
-
-  }
+vender(item){
+  
+}
 
 
   openModal(modal){

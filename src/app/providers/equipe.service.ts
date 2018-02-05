@@ -22,6 +22,50 @@ export class Equipe {
         .catch(err=> Observable.throw(err.message));
     }
 
+    
+    getTime(credentials) {
+        return new Promise((resolve, reject) => {
+          let headers = new Headers();
+      
+          this.http.post(this.api+'equipe/getTime', JSON.stringify(credentials), {headers: headers})
+            .subscribe(res => {
+              resolve(res.json());
+            }, (err) => {
+              reject(err);
+            });
+        });
+      
+      }
+
+
+      getPlantel(credentials) {
+        return new Promise((resolve, reject) => {
+          let headers = new Headers();
+      
+          this.http.post(this.api+'equipe/getPlantel', JSON.stringify(credentials), {headers: headers})
+            .subscribe(res => {
+              resolve(res.json());
+            }, (err) => {
+              reject(err);
+            });
+        });
+      
+      }
+
+      postPlantelCompra(credentials) {
+        return new Promise((resolve, reject) => {
+          let headers = new Headers();
+      
+          this.http.post(this.api+'equipe/postPlantelCompra', JSON.stringify(credentials), {headers: headers})
+            .subscribe(res => {
+              resolve(res.json());
+            }, (err) => {
+              reject(err);
+            });
+        });
+      
+      }
+
 
 
 
