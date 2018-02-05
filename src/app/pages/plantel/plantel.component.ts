@@ -90,18 +90,23 @@ if ( this.plantel.length < 22) {
   this.dados = {
     cod_card: item.id,
     cod_time: this.time[0].id,
-    estado: 0
+    estado: 0,
+    posicao: item.posicao
   }
 
             this.equipe.postPlantelCompra(this.dados).then((result) => {
              this.responseData = result;
              console.log(this.responseData);
-             if(this.responseData.permissao==2){
-              this.mensagemError = "Você ja comprou esse Jogador";
-             }
              if(this.responseData.permissao==0){
               this.mensagemError = "Desculpe, ocorreu um erro";
              } 
+             if(this.responseData.permissao==2){
+              this.mensagemError = "Você ja comprou esse Jogador";
+             }
+             if(this.responseData.permissao==3){
+              this.mensagemError = "Você ja atingiu o limite de Jogadores para a posição";
+             }
+             
               
            }, (err) => {
             console.log('erro')
@@ -113,7 +118,7 @@ if ( this.plantel.length < 22) {
     } 
 
 vender(item){
-  
+
 }
 
 
