@@ -301,8 +301,8 @@ a:hover {
 /* Slideshow */
 .slideshow{
 	width: 100%;
-	height:100vh;
-	min-height: 600px;
+	height:600px;
+	min-height: 500px;
 	padding: 0px !important;
 	margin-top: -60px;
 	background: black;
@@ -318,13 +318,13 @@ a:hover {
 
 .fade-carousel {
 	position: relative;
-	height: 100vh;
-	min-height: 600px;
+	height: 600px;
+	min-height: 500px;
 }
 
 .fade-carousel .carousel-inner .item {
-	height: 100vh;
-	min-height: 600px;
+	height: 600px;
+	min-height: 500px;
 }
 
 .fade-carousel .carousel-indicators> li {
