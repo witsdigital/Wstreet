@@ -1,0 +1,44 @@
+
+.texto-noticia {
+    border-bottom: 1px solid rgb(3, 104, 0);
+    margin: 10px;
+}
+
+.noticia {
+    overflow: auto;
+	height: 400px;
+    overflow-y: scroll;
+}
+
+
+.chat-content {
+    width: 100%;
+    background: rgba(31, 0, 168, 0.514);
+    padding: 20px;
+}
+
+
+.chat-content button{
+    float: right;
+}
+
+.chat {
+	overflow: auto;
+	height: 350px;
+	padding: 30px;
+	color: #fff;
+	border-radius: 10px;
+    overflow-y: scroll;
+
+
+}
+
+
+.chat .texto {
+	background: #F7F7F7;
+	color: #1B1B1B;
+	padding: 5px;
+	margin: 7px;
+	border-radius: 10px;
+
+}

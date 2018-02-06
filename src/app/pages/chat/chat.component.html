@@ -1,6 +1,6 @@
 <!-- Login -->
 
-<div class="tm-top-e-box tm-full-width  va-main-next-match1">
+<div class="tm-top-e-box tm-full-width  va-main-next-match2">
   <div class="uk-container uk-container-center">
       <section id="tm-top-e" class="tm-top-e uk-grid" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin="">
 
@@ -10,20 +10,38 @@
                       <div class="uk-grid uk-grid-collapse">
                           <div class="uk-width-medium-1-2 uk-width-small-1-1 va-single-next-match">
                               <div class="va-main-next-wrap">
-                                  <div class="main-next-match-title"><em>Street<span>Coin</span></em>
+                                  <div class="main-next-match-title"><em>Street<span>News</span></em>
                                   </div>
                                   <div class="match-list-single">
                                       <div class="match-list-item">
-                                          <p>Nam quis purus sed est interdum sagittis sed in leo. Nunc feugiat enim nunc, sit amet placerat erat consectetur in. Cras consequat enim nunc, sit amet venenatis massa volutpat ut. Cras vitae facilisis nulla. </p>
-                                          <p>Nulla pharetra lobortis nisl, vitae pretium nunc congue eget. Nunc imperdiet consequat nibh pharetra venenatis. Duis vitae lacinia nibh, et egestas leo. Proin sed mi sit amet dolor rhoncus tristique. Maecenas rhoncus felis vel congue commodo.</p>
-                                      </div>
+                                          <div class="noticia">
+                                             <div class="texto-noticia" *ngFor="let noticia of noticias">
+                                                <h4>{{noticia.titulo}}</h4>
+                                                <p>{{noticia.descricao}}</p>
+                                             </div> 
+                                          </div>
+                                          </div>
                                   </div>
                               </div>
                           </div>
                           <div class="uk-width-medium-1-2 uk-width-small-1-1 va-list-next-match">
                            
                                  
-                          
+                            <div class="chat-content" style="background-image: url('assets/images/about-team-banner.jpg');">
+                                <div class="chat">
+                                  <div class="texto" *ngFor="let mensagem of mensagens">{{mensagem.login}} as {{mensagem.data_hora}}: {{mensagem.mensagem}}</div>
+                                </div>
+
+                                  <form class="labels-uppercase clearfix"><br><br><br>
+                                      <input type="text" [(ngModel)]="texto" class="form-control"  name="texto" placeholder="Mensagem" required=""><br>
+                                        <div class="form-group pull-right"  style="margin-top:10px;">
+                                           
+                                           
+                                          <button type="button" class="btn btn-primary btn-rounded" (click)="enviar(); texto =''">Enviar</button>
+                                        </div>
+                                  </form>
+                                
+                              </div>
                               
 
                           </div>

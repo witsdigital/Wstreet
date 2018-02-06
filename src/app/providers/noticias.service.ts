@@ -23,6 +23,11 @@ export class Noticias {
         return this.http.get(this.api+'noticias/getNoticiaid/'+id).map(res=> res.json())
       }
 
+
+      getNoticias_transacao(){
+        return this.http.get(this.api+'noticias/getappnoticias_transacao').map(res=> res.json())
+      }
+
      
     
 }

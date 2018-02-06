@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { Videos } from '../../providers/videos.service';
 
 import { DomSanitizer } from '@angular/platform-browser';
+import { Equipe } from '../../providers/equipe.service';
 
 
 @Component({
@@ -16,34 +17,66 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class HomeComponent implements OnInit {
 
+
+  userData: any =[] ;
+
+  time: any = [];
+  plantel: any = [];
+
+
   noticias: any = [];
-  mensagens: any = [];
   videos: any = [];
 
   texto;
   responseData : any;
   mensagemError;
 
-  userData: any ;
+  
   dados: any;
 
-
-  constructor(private sanitize: DomSanitizer, public video: Videos, public noticia: Noticias, public chat: Chat, private route: ActivatedRoute, private router: Router ) { 
-    
-    
-    setInterval(() => { 
-       this.mensagens_chat();
-      }, 1000);
-
-    this.noticias_base();
-   
+  constructor(public equipe: Equipe, public video: Videos, public noticia: Noticias, public chat: Chat, private route: ActivatedRoute, private router: Router ) { 
     this.userData = JSON.parse(localStorage.getItem('userData'));
+    
+    this.noticias_base();
+    this.getvideo();
+    
+
+    this.getTime();
+
+
+    setInterval(() => { 
+      this.getPlantel();
+     }, 2000);
+   
  
   }
 
   ngOnInit() {
-    this.getvideo();
+ 
+    
+
   }
+
+  getTime(){
+    this.equipe.getTime(this.userData[0].id).then((data)=>{
+        this.time = data;
+    },(err)=>{
+
+    });
+
+  
+}
+
+getPlantel(){
+  this.equipe.getPlantel(this.time[0].id).then((data)=>{
+      this.plantel = data;
+
+  },(err)=>{
+
+  });
+
+
+}
 
 
 noticias_base(){
@@ -56,43 +89,6 @@ noticias_base(){
 
 }
 
-mensagens_chat() {
-
-  this.chat.getChat().subscribe((data)=>{
-    this.mensagens = data;
-
-  },(erro)=>{
-    console.log(erro);
-  });
-
-}
-
-
-
-enviar() {
-
-  this.dados = {
-  cod_equipe: this.userData[0].id,
-  mensagem: this.texto
-}
-
-  if(!this.texto){
-    this.mensagemError = "Digite uma mensagem valida";
-    console.log('Digite dados validos');
-  }else{
-      this.chat.postMensagens(this.dados).then((result) => {
-       this.responseData = result;
-       console.log(this.responseData[0].permissao);
-       if(this.responseData[0].permissao==0){
-        this.mensagemError = "Desculpe, ocorreu um erro";
-       }
-     }, (err) => {
-       this.texto = '';
-     });
- 
-}
-
-}
 
 getvideo(){
   this.video.getVideos().subscribe((data)=>{
@@ -104,9 +100,7 @@ getvideo(){
 
 }
 
-geturl(item){
-  return this.sanitize.bypassSecurityTrustResourceUrl(item);
-}
+
 
 
 

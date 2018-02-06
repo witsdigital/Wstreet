@@ -1,0 +1,33 @@
+.plantel {
+    text-align: center;
+    width: 150px;
+    height: 350px;
+    margin: 15px 5px;
+    background-size: 150px 255px;
+    background-repeat: no-repeat;
+    float: left;
+    color: rgb(255, 251, 41);
+    font-weight: bold;
+
+}
+
+.plantel img {
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+
+}
+
+.plantel .posicao{
+    margin: 3px;
+    color: azure;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.info {
+    margin-top: 25px;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 5px;
+    background: rgb(255, 255, 255);
+}

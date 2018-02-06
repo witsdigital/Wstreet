@@ -65,7 +65,7 @@ export class PlantelComponent implements OnInit {
 }
 
 getPlantel(){
-  this.equipe.getPlantel(this.userData[0].id).then((data)=>{
+  this.equipe.getPlantel(this.time[0].id).then((data)=>{
       this.plantel = data;
 
   },(err)=>{
