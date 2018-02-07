@@ -34,7 +34,7 @@ export class PlantelComponent implements OnInit {
     setInterval(() => { 
       this.getPlantel();
       this.getTimeAtributos();
-     }, 2000);
+     }, 1000);
 
     
     this.getCards();

@@ -9377,7 +9377,7 @@ a.uk-thumbnail:focus {
   text-align: center;
   font-family: FontAwesome;
   font-size: 14px;
-  color: #1b1b1b;
+  color: rgba(0, 0, 0, 0.2);
 }
 /* Sub-object `uk-search-field`
  ========================================================================== */
@@ -10171,7 +10171,7 @@ q {
 }
 .tm-menu-box:before {
   content: '';
-  background: #1b1b1b;
+  background: rgba(0, 0, 0, 0.2);
   top: 0;
   bottom: 0;
   left: -1000px;
@@ -10181,7 +10181,7 @@ q {
 .uk-navbar {
   margin: 0;
   background: none;
-  background: #1b1b1b;
+  background: rgba(0, 0, 0, 0.2);
   transition: 400ms all;
   -webkit-transition: 400ms all;
 }
@@ -11079,16 +11079,6 @@ q {
   padding: 90px 0;
   background: url("../images/tr.png") 50% 0 #008eaf;
 }
-
-.va-main-next-match1 {
-  padding: 90px 0;
-  background: url("../images/fb04791e435ada34da98c5ca40642149.jpg");
-}
-
-.va-main-next-match2 {
-  padding: 90px 0;
-  background: url("../images/main-slider-img2.jpg");
-}
 .va-single-next-match {
   background: #fff;
   border-bottom: 3px solid #2d2525;
@@ -11154,7 +11144,7 @@ q {
 }
 .uk-breadcrumb:before {
   content: '';
-  background: #1b1b1b;
+  background: rgba(0, 0, 0, 0.2);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -13530,7 +13520,7 @@ q {
   left: 0;
   bottom: 0;
   right: 0;
-  background: #1b1b1b;
+  background: rgba(0, 0, 0, 0.2);
   z-index: 1;
   opacity: 0;
 }

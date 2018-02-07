@@ -1,3 +1,4 @@
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(config: NgbCarouselConfig) {
+    config.interval = 5000;
+   }
 
   ngOnInit() {
   }

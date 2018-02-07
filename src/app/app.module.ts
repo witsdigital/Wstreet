@@ -3,7 +3,7 @@ import { Chat } from './providers/chat.service';
 import { Noticias } from './providers/noticias.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbActiveModal, NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 
 import { AppComponent } from './app.component';
@@ -62,7 +62,8 @@ import { Tickets } from './providers/tickets.service';
     Videos,
     Equipe,
     Tickets,
-    NgbActiveModal
+    NgbActiveModal,
+    NgbCarouselConfig
   ],
   bootstrap: [AppComponent]
 })

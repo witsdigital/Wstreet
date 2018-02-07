@@ -21,11 +21,10 @@ export class ChatComponent implements OnInit {
   constructor(public chat: Chat, public noticia: Noticias) { 
        setInterval(() => { 
        this.mensagens_chat();
+       this.noticias_transacao();
       }, 1000);
 
-      setInterval(() => { 
-        this.noticias_transacao();
-       }, 5000);
+
    
     this.userData = JSON.parse(localStorage.getItem('userData'));
   }
