@@ -5,7 +5,8 @@
 }
 
 .noticia {
-    overflow: auto;
+	overflow: auto;
+	min-height: 0px;
 	height: 400px;
     overflow-y: scroll;
 }

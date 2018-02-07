@@ -105,7 +105,8 @@
                    
                         <div class="content">
                             <br>
-                                <button class="btn-lg btn-success" (click)="openModal(modalPesquisarJogadores)">Comprar</button><br>
+                                <button *ngIf="plantel.length<22" class="btn-lg btn-success" (click)="openModal(modalPesquisarJogadores)">Comprar</button><br>
+                                <div  *ngIf="plantel.length>=22">Time Completo</div>
                                 <div class="plantel" style="background-image: url('/assets/images/cards/recordista.png');" *ngFor="let card of plantel">
                                     <img src="assets/images/cards/jogadores/{{card.id}}.png">
                              
