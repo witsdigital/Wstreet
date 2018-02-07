@@ -381,22 +381,28 @@
 
 
                   <div class="texto2" style="background-image: url(assets/images/verde.jpg);">
-                <h4 style="color: red; font-weight: bold; ">{{mensagemErrorCadastro}}</h4>
-                  
+                <div *ngIf="mensagemErrorCadastro">
+                <h4 style="color: red; font-weight: bold; background: #fff; border-radius: 5px; padding: 5px; ">{{mensagemErrorCadastro}}</h4>
+                </div>
+                <div *ngIf="mensagemSucessCadastro">
+                <h4 style="color: rgb(0, 255, 21); font-weight: bold; background: #fff; border-radius: 5px; padding: 5px;">{{mensagemSucessCadastro}}</h4>
+                </div>
+                  <form> 
                       <input type="text" [(ngModel)]="cad_login" class="form-control"  name="login" placeholder="Nome de usuario" required=""><br>
-                      <input type="text" [(ngModel)]="cad_email" class="form-control"  name="email" placeholder="Email" required=""><br>
+                      <input type="email" [(ngModel)]="cad_email" class="form-control"  name="email" placeholder="Email" required=""><br>
                     <input type="password" [(ngModel)]="cad_senha" class="form-control"  name="senha" placeholder="Senha" required=""  style="margin-bottom:10px;"><br>
                     <input type="password" [(ngModel)]="cad_senha2" class="form-control"  name="senha" placeholder="Repetir Senha" required=""  style="margin-bottom:10px;"><br>
                           
                     <div style="margin-top:10px; float: right;">
                             <div class="form-group pull-right">
-                                    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Cancelar</button>
+                                    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Fechar</button>
                           
-                                    <button type="button" class="btn btn-primary btn-rounded" (click)="cadastrar()" >Cadastrar</button>
+                                    <button type="submit" class="btn btn-primary btn-rounded" (click)="cadastrar()" >Cadastrar</button>
                                     
                             </div>
                             </div>
-                    
+                    </form>
+
                     </div>
 
 
@@ -412,7 +418,12 @@
         
         
                           <div class="texto2" style="background-image: url(assets/images/verde.jpg);">
-                        <h5 style="color: red;">{{mensagemRecSenha}}</h5>
+                            <div *ngIf="mensagemErrorCadastro">
+                                <h4 style="color: red; font-weight: bold; background: #fff; border-radius: 5px; padding: 5px; ">{{mensagemErrorCadastro}}</h4>
+                                </div>
+                                <div *ngIf="mensagemSucessCadastro">
+                                <h4 style="color: rgb(0, 255, 21); font-weight: bold; background: #fff; border-radius: 5px; padding: 5px;">{{mensagemSucessCadastro}}</h4>
+                                </div>
                           
                         <input type="text" [(ngModel)]="rec_email" class="form-control"  name="email" placeholder="Email" required=""><br>
                               <div style="margin-top:10px; float: right;">

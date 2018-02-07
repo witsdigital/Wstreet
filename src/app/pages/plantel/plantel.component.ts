@@ -3,6 +3,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap/modal/modal';
 import { Component, OnInit } from '@angular/core';
 import { get } from 'selenium-webdriver/http';
 
+import { DecimalPipe } from '@angular/common';
+
 @Component({
   selector: 'street-plantel',
   templateUrl: './plantel.component.html',
@@ -16,6 +18,7 @@ export class PlantelComponent implements OnInit {
 
   userData: any;
   time: any = [];
+  informacoesTime: any = []
 
   venda: any;
   dados: any;
@@ -30,6 +33,7 @@ export class PlantelComponent implements OnInit {
 
     setInterval(() => { 
       this.getPlantel();
+      this.getTimeAtributos();
      }, 2000);
 
     
@@ -77,7 +81,16 @@ getPlantel(){
 
 
 
+getTimeAtributos() {
+  this.equipe.getTimeAtributos(this.time[0].id).then((data)=>{
+      this.informacoesTime = data;
 
+  },(err)=>{
+
+  });
+
+
+}
 
 
 

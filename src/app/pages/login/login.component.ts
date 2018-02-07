@@ -7,6 +7,7 @@ import { HomeComponent } from '../home/home.component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../../providers/user.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap/modal/modal';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -25,11 +26,12 @@ export class LoginComponent implements OnInit {
   senha;
 
   userData: any = {};
-  responseData : any;
+  responseData : any = [];
 
   mensagemError;
   mensagemChatError
   mensagemErrorCadastro;
+  mensagemSucessCadastro;
 
 
   dados: any;
@@ -43,7 +45,7 @@ export class LoginComponent implements OnInit {
   rec_email;
   mensagemRecSenha;
 
-  constructor(public noticia: Noticias, public chat: Chat, public user: User, private route: ActivatedRoute, private router: Router, private modal: NgbModal) { 
+  constructor(public activeModal: NgbActiveModal, public noticia: Noticias, public chat: Chat, public user: User, private route: ActivatedRoute, private router: Router, private modal: NgbModal) { 
     
     setInterval(() => { 
       this.mensagens_chat();
@@ -105,22 +107,62 @@ cadastrar() {
   }
 
 
-
-
   if(!this.cad_login || !this.cad_senha || !this.cad_senha || !this.cad_senha2){
+    this.mensagemErrorCadastro = '';
     this.mensagemErrorCadastro = "Preencha todos os campos"
-    console.log('Digite dados validos');
   }
   
-  if(this.cad_senha != this.cad_senha2){
-    this.mensagemErrorCadastro = "As senhas não correspondem"
-    console.log('Digite dados validos');
+  else if(this.cad_senha != this.cad_senha2){
+    this.mensagemErrorCadastro = '';
+    this.mensagemErrorCadastro = "As senhas não correspondem";
   }
-  
   else{
+    this.user.postCadastro(this.userData).then((result) => {
+      this.responseData = result;
+      if(this.responseData.mensage==1){
+
+        this.mensagemErrorCadastro = '';
+       this.mensagemErrorCadastro = "Nome de usuario já cadastrado";
+  
+      }
+      if(this.responseData.mensage==2){
+        this.mensagemSucessCadastro = '';
+        this.mensagemErrorCadastro = "Email já cadastrado";
+       }
+       
+       else {
+        this.mensagemErrorCadastro = "";
+        this.mensagemSucessCadastro = "Cadastro realizado com sucesso, divirta-se.";
+      }
+
+
+    }, (err) => {
+      // Error log
+    });
     
 }
 
+}
+
+recuperar() {
+
+  this.user.postRecsenha(this.rec_email).then((result) => {
+    this.responseData = result;
+    console.log(this.responseData.permissao);
+    if(this.responseData.mensage==0){
+      this.mensagemSucessCadastro = '';
+     this.mensagemErrorCadastro = "Email não cadastrado"
+        
+    }else{
+    this.mensagemErrorCadastro = ''; 
+    this.mensagemSucessCadastro = "Nova senha enviada para seu email"
+
+    }
+
+
+  }, (err) => {
+    // Error log
+  });
 }
 
 
@@ -178,7 +220,10 @@ enviar() {
 
 
 openModal(modal){
+  this.mensagemSucessCadastro = '';
+  this.mensagemErrorCadastro = '';
   this.modal.open(modal);
+  
 }
 
 

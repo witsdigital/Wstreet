@@ -58,6 +58,14 @@
     font-weight: bold;
     text-transform: uppercase;
 }
+.info {
+    margin-top: 25px;
+    color: black;
+}
+
+.info button{
+    margin-top: 5px;
+}
 
 
 .atributo img{
@@ -66,11 +74,19 @@
   
 }
 
-.info {
-    margin-top: 25px;
-    color: black;
+.informacoesTime {
+    width: 100%;
+    float: left;
 }
 
-.info button{
-    margin-top: 5px;
+.informacoesTime .atri {
+    float: left;
+}
+
+.forcamaxima {
+    background: rgb(28, 212, 4);
+    padding: 10px;
+    color: aliceblue;
+    border-radius: 10px;
+    margin-top: 10px;
 }

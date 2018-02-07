@@ -35,6 +35,35 @@ export class User {
     
     }
 
+    postCadastro(credentials) {
+      return new Promise((resolve, reject) => {
+        let headers = new Headers();
+    
+        this.http.post(this.api+'apilogin/cadastro', JSON.stringify(credentials), {headers: headers})
+          .subscribe(res => {
+            resolve(res.json());
+          }, (err) => {
+            reject(err);
+          });
+      });
+    
+    }
+
+
+    postRecsenha(credentials) {
+      return new Promise((resolve, reject) => {
+        let headers = new Headers();
+    
+        this.http.post(this.api+'apilogin/recpass', JSON.stringify(credentials), {headers: headers})
+          .subscribe(res => {
+            resolve(res.json());
+          }, (err) => {
+            reject(err);
+          });
+      });
+    
+    }
+
 
     getUserId(credentials) {
       return new Promise((resolve, reject) => {

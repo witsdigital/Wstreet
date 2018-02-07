@@ -8,13 +8,58 @@
   <div id="tm-middle" class="tm-middle uk-grid" data-uk-grid-match="" data-uk-grid-margin="">
       <div class="tm-main uk-width-medium-1-1 uk-row-first">
           <main id="tm-content" class="tm-content">
+                <br>
+                <div class="list-players-wrapper">
+                        <div class="uk-sticky-placeholder">
+                            <div class="button-group filter-button-group" data-uk-sticky="{top:70, boundary: true}">
+                                <div class="uk-container uk-container-center">
+                                    <div class="label-menu">Dados da equipe</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-players-wrap" id="boundary">
+                            <div class="uk-container uk-container-center alt">
+                              <div class="row" style="min-height: 150px;">
+                                  <div *ngFor="let info of informacoesTime" class="col-md-4" style="margin-top: 10px;">
+                                    <h4>Força da equipe titular</h4>
+                                      Defesa: {{info.defesa_maxima }}<br>
+                                      Ataque: {{info.atk_maximo }}<br>
+                                      Resistência: {{info.resistencia_maxima}}<br>
+                                  </div>
+                                  <div *ngFor="let info of informacoesTime" class="col-md-4" style="margin-top: 10px;">
+                                        <h4>Bonus do plantel</h4>
+                                          Defesa: {{info.defesa_maxima}}<br>
+                                          Ataque: {{info.atk_maximo}}<br>
+                                          Resistência: {{info.resistencia_maxima}}<br>
+                                </div>
+                                <div *ngFor="let info of informacoesTime" class="col-md-4" style="margin-top: 10px;">
+                                        <h4>Bonus do treinamento</h4>
+                                          Defesa: {{info.defesa_maxima}}<br>
+                                          Ataque: {{info.atk_maximo}}<br>
+                                          Resistência: {{info.resistencia_maxima}}<br>
+                                    </div>
 
-              <div class="uk-container uk-container-center tt-gallery-top">
-                  <div class="uk-grid" data-uk-grid-match="">
-                      <div class="uk-width-medium-3-10 uk-width-small-1-1 title">Dados da equipe</div>
-                      <div class="uk-width-medium-7-10 uk-width-small-1-1 text"><br>Aenean aliquam, dolor eu lacinia pellentesque, dui arcu condimentum nisl, quis sollicitudin mi lorem quis leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis sapien a ante rutrum pulvinar quis ac tellus. Proin facilisis dui at mollis tincidunt. Sed dignissim orci non arcu luctus pretium. Donec at ex aliquet, porttitor lacus eget, ullamcorper quam. Integer pellentesque egestas arcu, nec molestie leo sollicitudin et<br></div>
-                  </div>
-              </div>
+                                    <div *ngFor="let info of informacoesTime" class="col-md-4" style="margin-top: 10px;">
+                                            <h3>Força total da equipe</h3>
+                                              Defesa: {{info.defesa_maxima}}<br>
+                                              Ataque: {{info.atk_maximo}}<br>
+                                              Resistência: {{info.resistencia_maxima}}<br>
+                                    </div>
+
+                                    <div *ngFor="let info of time" class="col-md-4" style="margin-top: 10px;">
+                                            <h3>{{info.nome}}</h3>
+                                              Saldo: 1.55 LTC<br>
+                                    </div>
+
+                                </div>
+                                
+                        </div>
+                      
+                      </div>
+                      </div>
+                      
+
+              
 <!-- escalação-->
 <div class="list-players-wrapper">
   <div class="uk-sticky-placeholder">
@@ -74,7 +119,6 @@
                                     <div class="posicao" *ngIf="card.posicao==5">Meio Campo</div>
                                     <div class="posicao" *ngIf="card.posicao==6">Atacante</div>
                                    
-                               
                                     <div class="info">
                                     {{card.nome}}<br>
                                     LTC: <font color="red">{{card.valor}}</font><br>

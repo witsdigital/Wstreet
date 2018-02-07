@@ -3,7 +3,7 @@ import { Chat } from './providers/chat.service';
 import { Noticias } from './providers/noticias.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 import { AppComponent } from './app.component';
@@ -26,6 +26,8 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
 import { Equipe } from './providers/equipe.service';
 import { ChatComponent } from './pages/chat/chat.component';
 import { HeaderComponent } from './pages/header/header.component';
+import { Tickets } from './providers/tickets.service';
+
 
 
 
@@ -51,14 +53,16 @@ import { HeaderComponent } from './pages/header/header.component';
     HttpModule,
     RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules}),
     FormsModule,
-    NgbModule.forRoot(),
+    NgbModule.forRoot()
   ],
   providers: [
     Chat,
     Noticias,
     User,
     Videos,
-    Equipe
+    Equipe,
+    Tickets,
+    NgbActiveModal
   ],
   bootstrap: [AppComponent]
 })
