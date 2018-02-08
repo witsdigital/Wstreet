@@ -1,9 +1,11 @@
+
 import { Equipe } from './../../providers/equipe.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap/modal/modal';
 import { Component, OnInit } from '@angular/core';
 import { get } from 'selenium-webdriver/http';
 
 import { DecimalPipe } from '@angular/common';
+
 
 @Component({
   selector: 'street-plantel',
@@ -25,6 +27,7 @@ export class PlantelComponent implements OnInit {
 
   mensagemError;
   responseData: any = [];
+
 
   constructor(private modal: NgbModal, public equipe: Equipe) { 
     this.userData = JSON.parse(localStorage.getItem('userData'));

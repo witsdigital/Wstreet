@@ -106,11 +106,15 @@
                         <div class="content">
                             <br>
                                 <button *ngIf="plantel.length<22" class="btn-lg btn-success" (click)="openModal(modalPesquisarJogadores)">Comprar</button><br>
-                                <div  *ngIf="plantel.length>=22">Time Completo</div>
+                                <div  *ngIf="plantel.length>=22">
+                                        <ngb-alert type="success" [dismissible]="false">
+                                            PLANTEL COMPLETO
+                                        </ngb-alert>
+                                </div>
                                 <div class="plantel" style="background-image: url('/assets/images/cards/recordista.png');" *ngFor="let card of plantel">
                                     <img src="assets/images/cards/jogadores/{{card.id}}.png">
                              
-                                    DEF: {{card.defesa}}<br>
+                                    DEF: {{card.defesa}}<br>        
                                     ATK: {{card.ataque}}<br>
                                     RES: {{card.resistencia}}<br>
                                     <div class="posicao" *ngIf="card.posicao==1">Goleiro</div>
@@ -156,9 +160,13 @@
                         <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">X</button>
           
                       </div>
+                      <div *ngIf="mensagemError">
+                      <ngb-alert [dismissible]="false">
+                        <strong>{{mensagemError}}!</strong>
+                      </ngb-alert>
+                    </div>
                       <div class="list-players-wrap" style="margin: 0 auto;">
                       <div class="content">
-                          <h5 style="color:red;">{{mensagemError}}</h5>
                         <div class="card" style="background-image: url('/assets/images/cards/lendario.png');" *ngFor="let card of cards">
                             <img src="assets/images/cards/jogadores/{{card.id}}.png">
                             DEF: {{card.defesa}}<br>
