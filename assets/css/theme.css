@@ -11077,7 +11077,12 @@ q {
 }
 .va-main-next-match {
   padding: 90px 0;
-  background: url("../images/tr.png") 50% 0 #008eaf;
+  background: url("../images/tr.png");
+}
+
+.va-main-next-match1 {
+  padding: 90px 0;
+  background: url("../images/fb04791e435ada34da98c5ca40642149.jpg") 50% 0 #008eaf;
 }
 .va-single-next-match {
   background: #fff;

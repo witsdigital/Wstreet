@@ -81,6 +81,20 @@ export class Equipe {
       
       }
 
+      PostEscalar(credentials) {
+        return new Promise((resolve, reject) => {
+          let headers = new Headers();
+      
+          this.http.post(this.api+'equipe/PostEscalar', JSON.stringify(credentials), {headers: headers})
+            .subscribe(res => {
+              resolve(res.json());
+            }, (err) => {
+              reject(err);
+            });
+        });
+      
+      }
+
       getTimeAtributos(credentials) {
         return new Promise((resolve, reject) => {
           let headers = new Headers();

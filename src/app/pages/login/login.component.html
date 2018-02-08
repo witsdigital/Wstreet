@@ -28,7 +28,12 @@
                                    
                             <div class="texto" >
                                     <h3>Login</h3>
-                            <h5 style="color: red;">{{mensagemError}}</h5>
+                                    <div *ngIf="mensagemError">
+                                            <ngb-alert [dismissible]="false">
+                                                    <strong>{{mensagemError}}!</strong> 
+                                            </ngb-alert>
+                                    </div>
+                                    
                               <form>
                                   <input type="text" [(ngModel)]="login" class="form-control"  name="login" placeholder="Nome de usuario/Email" required=""><br>
                                 <input type="password" [(ngModel)]="senha" class="form-control"  name="senha" placeholder="Senha" required=""  style="margin-bottom:10px;">
@@ -381,12 +386,16 @@
 
 
                   <div class="texto2" style="background-image: url(assets/images/verde.jpg);">
-                <div *ngIf="mensagemErrorCadastro">
-                <h4 style="color: red; font-weight: bold; background: #fff; border-radius: 5px; padding: 5px; ">{{mensagemErrorCadastro}}</h4>
-                </div>
-                <div *ngIf="mensagemSucessCadastro">
-                <h4 style="color: rgb(0, 255, 21); font-weight: bold; background: #fff; border-radius: 5px; padding: 5px;">{{mensagemSucessCadastro}}</h4>
-                </div>
+                    <div *ngIf="mensagemErrorCadastro">
+                            <ngb-alert [dismissible]="false">
+                                    <strong>{{mensagemErrorCadastro}}!</strong> 
+                            </ngb-alert>
+                    </div>
+                    <div *ngIf="mensagemSucessCadastro">
+                            <ngb-alert type="success" [dismissible]="false">
+                                    <strong>{{mensagemSucessCadastro}}!</strong> 
+                            </ngb-alert>
+                     </div>
                   <form> 
                       <input type="text" [(ngModel)]="cad_login" class="form-control"  name="login" placeholder="Nome de usuario" required=""><br>
                       <input type="email" [(ngModel)]="cad_email" class="form-control"  name="email" placeholder="Email" required=""><br>
@@ -419,11 +428,15 @@
         
                           <div class="texto2" style="background-image: url(assets/images/verde.jpg);">
                             <div *ngIf="mensagemErrorCadastro">
-                                <h4 style="color: red; font-weight: bold; background: #fff; border-radius: 5px; padding: 5px; ">{{mensagemErrorCadastro}}</h4>
-                                </div>
-                                <div *ngIf="mensagemSucessCadastro">
-                                <h4 style="color: rgb(0, 255, 21); font-weight: bold; background: #fff; border-radius: 5px; padding: 5px;">{{mensagemSucessCadastro}}</h4>
-                                </div>
+                                    <ngb-alert [dismissible]="false">
+                                            <strong>{{mensagemErrorCadastro}}!</strong> 
+                                    </ngb-alert>
+                            </div>
+                            <div *ngIf="mensagemSucessCadastro">
+                                    <ngb-alert type="success" [dismissible]="false">
+                                            <strong>{{mensagemSucessCadastro}}!</strong> 
+                                    </ngb-alert>
+                             </div>
                           
                         <input type="text" [(ngModel)]="rec_email" class="form-control"  name="email" placeholder="Email" required=""><br>
                               <div style="margin-top:10px; float: right;">

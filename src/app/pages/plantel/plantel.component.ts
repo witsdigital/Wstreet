@@ -82,6 +82,38 @@ getPlantel(){
 
 }
 
+escalar(card){
+
+  this.dados = {
+    cod_card: card.id,
+    cod_time: this.time[0].id,
+    estado: 1
+  }
+  this.equipe.PostEscalar(this.dados).then((data)=>{
+      this.responseData = data;
+  },(err)=>{
+
+  });
+
+
+}
+
+removerEscalar(card){
+
+  this.dados = {
+    cod_card: card.id,
+    cod_time: this.time[0].id,
+    estado: 0
+  }
+  this.equipe.PostEscalar(this.dados).then((data)=>{
+      this.responseData = data;
+  },(err)=>{
+
+  });
+
+
+}
+
 
 
 getTimeAtributos() {

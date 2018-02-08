@@ -74,16 +74,27 @@
         <div class="content">
             <br>
                 <button class="btn-lg btn-primary" (click)="openModal(modalescalacao)">Escalar Equipe</button>
-            <div class="plantel" style="background-image: url('/assets/images/cards/recordista.png');" *ngFor="let card of escalacao">
+                <div *ngFor="let card of plantel">
+            <div class="plantel" style="background-image: url('/assets/images/cards/recordista.png');" *ngIf="card.estado==1">
+                
                 <img src="assets/images/cards/jogadores/{{card.id}}.png">
-                {{card.defesa}}<br>
-                {{card.ataque}}<br>
-                {{card.resistencia}}<br>
-                <div class="info">
-                {{card.nome}}<br>
-                {{card.valor}}
+                DEF: {{card.defesa}}<br>        
+                                    ATK: {{card.ataque}}<br>
+                                    RES: {{card.resistencia}}<br>
+                                    <div class="posicao" *ngIf="card.posicao==1">Goleiro</div>
+                                    <div class="posicao" *ngIf="card.posicao==2">Zagueiro</div>
+                                    <div class="posicao" *ngIf="card.posicao==3">Lateral</div>
+                                    <div class="posicao" *ngIf="card.posicao==4">Volante</div>
+                                    <div class="posicao" *ngIf="card.posicao==5">Meio Campo</div>
+                                    <div class="posicao" *ngIf="card.posicao==6">Atacante</div>
+                                   
+                                    <div class="info">
+                                    {{card.nome}}<br>
+                                    <button class="btn btn-primary" (click)="removerEscalar(card)">Remover</button>
+                                
             </div>
             </div>
+        </div>
           </div>
           
   </div>
@@ -214,7 +225,9 @@
                                         <div class="posicao" *ngIf="card.posicao==6">Atacante</div>
                                         <div class="info">
                                         {{card.nome}}<br>
-                                        <button class="btn btn-success" (click)="comprar(card)">Escalar</button>
+                                        
+                                        <button  *ngIf="card.estado==0" class="btn btn-success" (click)="escalar(card)">Escalar</button>
+                                        <div *ngIf="card.estado==1" style="color:rgb(0, 134, 11); margin-top: 4px;">Jogador escalado</div>
                                     </div>
                                     </div>
                                   </div>
